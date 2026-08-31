@@ -255,15 +255,19 @@ if (clone) {
 // The reference band is a photograph; ours is a drawn board: traces rising
 // like a treeline, pads and chips instead of spruces, in the brand purples
 // on white paper. Deterministic (seeded LCG, no Math.random), so every load
-// prints the same board. Deliberately still: it prints once and sits there.
+// prints the same board. The board itself holds still; the only motion is
+// a few slow signal blips, never more than a handful on screen, gated to
+// fine pointers with motion allowed.
 (function () {
   var host = document.querySelector(".circuit");
   if (!host) return;
   var cv = host.querySelector("canvas");
+  var animate = !matchMedia("(prefers-reduced-motion: reduce)").matches && matchMedia("(pointer: fine)").matches;
   var CELL = 3;
   var LIGHT = [157, 150, 255], MID = [99, 85, 255], DEEP = [59, 43, 170];
 
   var cols = 0, rows = 0, density = null, out = null, ctx = null;
+  var pulses = [], base = null;
 
   function lcg(seed) {
     var s = seed >>> 0;
@@ -299,7 +303,7 @@ if (clone) {
     }
 
     // traces rising to varied heights, some with one 45-degree jog
-
+    var all = [];
     for (var tx = 3; tx < cols - 4; tx += 4 + Math.floor(rnd() * 6)) {
       var topY = Math.floor(rows * (0.12 + rnd() * 0.62));
       var jog = rnd() < 0.5 ? (rnd() < 0.5 ? -1 : 1) * (2 + Math.floor(rnd() * 5)) : 0;
@@ -327,7 +331,14 @@ if (clone) {
         ox.fillStyle = grey(0.75);
         ox.fillRect(pts[1][0], pts[1][1] - 1, 1, 1);
       }
+      var len = 0;
+      for (var s = 1; s < pts.length; s++) {
+        len += Math.hypot(pts[s][0] - pts[s - 1][0], pts[s][1] - pts[s - 1][1]);
+      }
+      all.push({ pts: pts, len: len });
     }
+    // a handful of traces carry a blip; the rest stay quiet
+    pulses = all.filter(function (_, i) { return i % 7 === 3; });
 
     // two horizontal buses tying the board together
     [0.88, 0.94].forEach(function (fy, i) {
@@ -369,6 +380,40 @@ if (clone) {
       }
     }
     ctx.putImageData(out, 0, 0);
+    base = new Uint8ClampedArray(out.data);
+  }
+
+  // one slow blip at a time on a quiet board, copied over the still base
+  function frame(t) {
+    if (!base) return;
+    out.data.set(base);
+    var d = out.data;
+    pulses.forEach(function (tr, i) {
+      var pos = ((t / 1000) * 9 + i * 53) % (tr.len + 90);
+      if (pos > tr.len) return; // resting between blips
+      var walked = tr.len - pos; // climb bottom to top
+      for (var s = 1; s < tr.pts.length; s++) {
+        var a = tr.pts[s - 1], b = tr.pts[s];
+        var seg = Math.hypot(b[0] - a[0], b[1] - a[1]);
+        if (walked <= seg) {
+          var k = walked / seg;
+          var px = Math.round(a[0] + (b[0] - a[0]) * k);
+          var py = Math.round(a[1] + (b[1] - a[1]) * k);
+          for (var dy = 0; dy <= 1; dy++) {
+            for (var dx = 0; dx <= 1; dx++) {
+              var xx = px + dx, yy = py + dy;
+              if (xx >= 0 && yy >= 0 && xx < cols && yy < rows) {
+                var o = (yy * cols + xx) * 4;
+                d[o] = DEEP[0]; d[o + 1] = DEEP[1]; d[o + 2] = DEEP[2]; d[o + 3] = 255;
+              }
+            }
+          }
+          break;
+        }
+        walked -= seg;
+      }
+    });
+    ctx.putImageData(out, 0, 0);
   }
 
   build();
@@ -379,4 +424,17 @@ if (clone) {
     clearTimeout(rt);
     rt = setTimeout(function () { build(); draw(); }, 150);
   }, { passive: true });
+
+  if (!animate) return;
+  var running = false, raf = 0, last = 0;
+  function tick(t) {
+    raf = 0;
+    if (!running) return;
+    if (t - last >= 50) { frame(t); last = t; }
+    raf = requestAnimationFrame(tick);
+  }
+  new IntersectionObserver(function (entries) {
+    running = entries[0].isIntersecting;
+    if (running && !raf) raf = requestAnimationFrame(tick);
+  }).observe(host);
 })();
