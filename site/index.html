@@ -3,13 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
 <title>stanley-mcp-playground · the Stanley MCP cookbook</title>
 <meta name="description" content="A cookbook for the Stanley MCP: workflows for running your content operation from a conversation with Claude.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%23d9482b'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%236355FF'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Instrument+Sans:wght@400;500;650&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<noscript><style>[data-rv], .stagger > * { opacity: 1 !important; translate: 0 0 !important; }</style></noscript>
 </head>
 <body>
 <header class="top">
@@ -24,34 +26,34 @@
 <main>
 <section class="hero">
   <div>
-    <h1>Recipes for driving <em>Stanley</em> from Claude.</h1>
-    <p class="lede">A cookbook for the Stanley MCP. Plan a week of posts in one sitting, turn merged PRs into build-in-public threads, read your own numbers, and put the whole thing on a schedule, from a conversation.</p>
-    <div class="cta-row">
+    <h1 data-rv>Recipes for driving <em>Stanley</em> from Claude.</h1>
+    <p class="lede" data-rv style="--d:80ms">A cookbook for the Stanley MCP. Plan a week of posts in one sitting, turn merged PRs into build-in-public threads, read your own numbers, and put the whole thing on a schedule, from a conversation.</p>
+    <div class="cta-row" data-rv style="--d:160ms">
       <a class="btn btn-primary" href="recipes/01-first-connection.html">Start with recipe 01</a>
       <a class="btn btn-ghost" href="#recipes">Browse all nine</a>
     </div>
-    <div class="clone"><code>git clone https://github.com/JayantChopra/stanley-mcp-playground.git &amp;&amp; cd stanley-mcp-playground &amp;&amp; claude</code></div>
+    <div class="clone" data-rv style="--d:240ms"><code>git clone https://github.com/JayantChopra/stanley-mcp-playground.git &amp;&amp; cd stanley-mcp-playground &amp;&amp; claude</code></div>
   </div>
-  <div class="convo" role="img" aria-label="A conversation: you ask Stanley what is connected, Stanley replies with platforms, a broken session, and posting slots.">
+  <div class="convo" data-rv style="--d:200ms" role="img" aria-label="A conversation: you ask Stanley what is connected, Stanley replies with platforms, a broken session, and posting slots.">
     <div class="bar"><span></span><span></span><span></span></div>
-    <div class="msg msg-you"><span class="who">you</span>List every platform and integration connected for this account, flag anything expired or broken, and show my posting slots.</div>
-    <div class="msg msg-stanley"><span class="who">stanley</span>
+    <div class="msg msg-you"><span class="who">You</span>List every platform and integration connected for this account, flag anything expired or broken, and show my posting slots.</div>
+    <div class="msg msg-stanley"><span class="who">Stanley</span>
       <ul>
-        <li class="ok">x · linkedin · github · notion</li>
+        <li>x · linkedin · github · notion</li>
         <li class="warn">instagram: session expired, reconnect on the integrations page</li>
         <li>slots: 8:00 am · 12:00 pm</li>
       </ul>
     </div>
-    <p class="caption">the audit from <a href="recipes/01-first-connection.html">recipe 01</a>, where every setup starts</p>
+    <p class="caption">The audit from <a href="recipes/01-first-connection.html">recipe 01</a>, where every setup starts</p>
   </div>
 </section>
 
 <section class="how">
   <div class="how-inner">
-    <span class="kicker">how it works</span>
-    <h2 class="section">One MCP tool, four moving parts</h2>
-    <p class="note">Claude reaches Stanley through a single tool, <code>message_stanley</code>. Recipes are conversation patterns, which is why everything on this site is copy-paste-able.</p>
-    <div class="flow">
+    <span class="kicker">How it works</span>
+    <h2 class="section" data-rv>One MCP tool, four moving parts</h2>
+    <p class="note" data-rv style="--d:80ms">Claude reaches Stanley through a single tool, <code>message_stanley</code>. Recipes are conversation patterns, which is why everything on this site can be pasted straight in.</p>
+    <div class="flow stagger" data-rv>
       <div class="node"><strong>You</strong><p>Raw material: what you shipped, learned, argued about this week.</p></div>
       <div class="arrow" aria-hidden="true">→</div>
       <div class="node"><strong>Claude</strong><p>Orchestrates. Reads your repos and notes, drives your other tools.</p></div>
@@ -64,33 +66,33 @@
 </section>
 
 <section class="recipes" id="recipes">
-  <span class="kicker">the cookbook</span>
-  <h2 class="section">Nine recipes, in learning order</h2>
-  <p class="note" style="color:var(--muted);max-width:62ch">Numbered because order matters: 00 is the reference sheet, 01 gets you connected, and everything after is a bigger version of the same loop.</p>
-  <div class="grid">
-    <a class="card" href="recipes/00-what-stanley-can-do.html"><span class="num">recipe 00</span><h3>What Stanley can do</h3><p>The capability reference every other recipe leans on.</p></a>
-    <a class="card" href="recipes/01-first-connection.html"><span class="num">recipe 01</span><h3>Connect and run your first loop</h3><p>MCP setup, connection audit, draft then schedule.</p></a>
-    <a class="card" href="recipes/02-content-calendar.html"><span class="num">recipe 02</span><h3>Plan a week in one sitting</h3><p>Fill your calendar slots from one working session.</p></a>
-    <a class="card" href="recipes/03-build-in-public.html"><span class="num">recipe 03</span><h3>Build in public</h3><p>Commits and PRs turned into story posts.</p></a>
-    <a class="card" href="recipes/04-analytics-review.html"><span class="num">recipe 04</span><h3>Analytics review</h3><p>SQL over your own post metrics, fed back into planning.</p></a>
-    <a class="card" href="recipes/05-trend-scouting.html"><span class="num">recipe 05</span><h3>Trend scouting</h3><p>Niche trends, video teardowns, creator audits.</p></a>
-    <a class="card" href="recipes/06-repurposing.html"><span class="num">recipe 06</span><h3>Repurposing</h3><p>One piece of content, every platform.</p></a>
-    <a class="card" href="recipes/07-external-media.html"><span class="num">recipe 07</span><h3>External media</h3><p>Canva, Recraft, or anything with a URL, attached to drafts.</p></a>
-    <a class="card" href="recipes/08-rituals.html"><span class="num">recipe 08</span><h3>Rituals</h3><p>Morning briefs, cron jobs, poll-based triggers.</p></a>
+  <span class="kicker">The cookbook</span>
+  <h2 class="section" data-rv>Nine recipes, in learning order</h2>
+  <p class="note" data-rv style="--d:80ms">Numbered because order matters: 00 is the reference sheet, 01 gets you connected, and everything after is a bigger version of the same loop.</p>
+  <div class="grid stagger" data-rv>
+    <a class="card" href="recipes/00-what-stanley-can-do.html"><span class="num">Recipe 00</span><h3>What Stanley can do</h3><p>The capability reference every other recipe leans on.</p></a>
+    <a class="card" href="recipes/01-first-connection.html"><span class="num">Recipe 01</span><h3>Connect and run your first loop</h3><p>MCP setup, connection audit, draft then schedule.</p></a>
+    <a class="card" href="recipes/02-content-calendar.html"><span class="num">Recipe 02</span><h3>Plan a week in one sitting</h3><p>Fill your calendar slots from one working session.</p></a>
+    <a class="card" href="recipes/03-build-in-public.html"><span class="num">Recipe 03</span><h3>Build in public</h3><p>Commits and PRs turned into story posts.</p></a>
+    <a class="card" href="recipes/04-analytics-review.html"><span class="num">Recipe 04</span><h3>Analytics review</h3><p>SQL over your own post metrics, fed back into planning.</p></a>
+    <a class="card" href="recipes/05-trend-scouting.html"><span class="num">Recipe 05</span><h3>Trend scouting</h3><p>Niche trends, video teardowns, creator audits.</p></a>
+    <a class="card" href="recipes/06-repurposing.html"><span class="num">Recipe 06</span><h3>Repurposing</h3><p>One piece of content, every platform.</p></a>
+    <a class="card" href="recipes/07-external-media.html"><span class="num">Recipe 07</span><h3>External media</h3><p>Canva, Recraft, or anything with a URL, attached to drafts.</p></a>
+    <a class="card" href="recipes/08-rituals.html"><span class="num">Recipe 08</span><h3>Rituals</h3><p>Morning briefs, cron jobs, poll-based triggers.</p></a>
   </div>
 </section>
 
 <section class="skills" id="skills">
   <div class="skills-inner">
-    <span class="kicker">drop-in skills</span>
-    <h2 class="section">Slash commands included</h2>
-    <p class="note">Open the repo in Claude Code and these work immediately, no copying. <code>/stanley-start</code> audits what you have connected and names the recipes your setup can run.</p>
-    <div class="chips">
-    <span class="chip"><b>/stanley-start</b> · audits connections, names your next recipes</span>
-    <span class="chip"><b>/stanley-week-plan</b> · plans and schedules a week</span>
-    <span class="chip"><b>/build-in-public</b> · turns PRs into posts</span>
-    <span class="chip"><b>/stanley-review</b> · runs the weekly numbers</span>
-    <span class="chip"><b>/repurpose</b> · one post, every platform</span>
+    <span class="kicker">Drop-in skills</span>
+    <h2 class="section" data-rv>Slash commands included</h2>
+    <p class="note" data-rv style="--d:80ms">Open the repo in Claude Code and these work immediately, no copying. <code>/stanley-start</code> audits what you have connected and names the recipes your setup can run.</p>
+    <div class="chips stagger" data-rv>
+    <span class="chip"><b>/stanley-start</b>&nbsp;· audits connections, names your next recipes</span>
+    <span class="chip"><b>/stanley-week-plan</b>&nbsp;· plans and schedules a week</span>
+    <span class="chip"><b>/build-in-public</b>&nbsp;· turns PRs into posts</span>
+    <span class="chip"><b>/stanley-review</b>&nbsp;· runs the weekly numbers</span>
+    <span class="chip"><b>/repurpose</b>&nbsp;· one post, every platform</span>
     </div>
   </div>
 </section>
@@ -104,7 +106,9 @@
     <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a>
     <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CHANGELOG.md">Changelog</a>
   </nav>
-</div></footer>
+</div>
+<div class="foot-mark" aria-hidden="true">stanley<span class="dot">·</span>mcp<span class="dot">·</span>playground</div>
+</footer>
 <script src="app.js"></script>
 </body>
 </html>
