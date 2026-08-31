@@ -29,7 +29,7 @@ This applies to all project spaces: the repository, issues, pull requests, discu
 
 ## Reporting
 
-Report violations privately through [GitHub's report abuse flow](https://github.com/contact/report-abuse) or by contacting the maintainer, [@JayantChopra](https://github.com/JayantChopra), directly. Include what context you are comfortable sharing: links, screenshots, dates. Reports are handled with discretion and shared only with people who need them to respond.
+Report violations privately by emailing [jay.chopra@stanwith.me](mailto:jay.chopra@stanwith.me), through [GitHub's report abuse flow](https://github.com/contact/report-abuse), or by contacting the maintainer, [@JayantChopra](https://github.com/JayantChopra), directly. Include what context you are comfortable sharing: links, screenshots, dates. Reports are handled with discretion and shared only with people who need them to respond.
 
 ## Enforcement
 

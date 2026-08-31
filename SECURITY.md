@@ -10,7 +10,7 @@ Only the latest `main` is supported. There are no release branches; fixes land o
 
 **Do not report security issues as public GitHub issues or pull requests.**
 
-Use [GitHub Private Vulnerability Reporting](https://github.com/JayantChopra/stanley-mcp-playground/security/advisories/new) on the Security tab. It keeps the report private and tracked. You'll get an acknowledgement within a few days, and credit in the fix unless you ask to stay anonymous.
+Use [GitHub Private Vulnerability Reporting](https://github.com/JayantChopra/stanley-mcp-playground/security/advisories/new) on the Security tab. It keeps the report private and tracked. If you'd rather not go through GitHub, email [jay.chopra@stanwith.me](mailto:jay.chopra@stanwith.me). Either way you'll get an acknowledgement within a few days, and credit in the fix unless you ask to stay anonymous.
 
 ## What counts as a vulnerability here
 
