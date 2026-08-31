@@ -1,7 +1,7 @@
 // Behaviours, all progressive enhancement, all from the halftone spec
 // (https://design-template-jet.vercel.app/llms.txt): copy buttons, the scroll
 // motion engine (data-rv reveals, stagger, scroll-linked --p), the footer's
-// ordered-dither woods band, and the hero's turntable phone prop.
+// static circuit-board dither band, and the hero's turntable phone prop.
 // JS writes variables and pixels; CSS owns the look. Nothing here is random,
 // so every render is identical.
 
@@ -252,22 +252,18 @@ if (clone) {
 })();
 
 // ---- the circuit band: procedural wiring through the same dither ----
-// The reference band is a photograph with wind; ours is a drawn board:
-// traces rising like a treeline, pads and chips instead of spruces, in the
-// brand purples on white paper. Deterministic (seeded LCG, no Math.random),
-// so every load prints the same board. Animation is signal pulses climbing
-// the traces plus a slow Bayer phase drift, and it only runs on fine
-// pointers with motion allowed; everyone else gets one settled frame.
+// The reference band is a photograph; ours is a drawn board: traces rising
+// like a treeline, pads and chips instead of spruces, in the brand purples
+// on white paper. Deterministic (seeded LCG, no Math.random), so every load
+// prints the same board. Deliberately still: it prints once and sits there.
 (function () {
   var host = document.querySelector(".circuit");
   if (!host) return;
   var cv = host.querySelector("canvas");
-  var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var animate = !reduce && matchMedia("(pointer: fine)").matches;
   var CELL = 3;
   var LIGHT = [157, 150, 255], MID = [99, 85, 255], DEEP = [59, 43, 170];
 
-  var cols = 0, rows = 0, density = null, traces = [], out = null, ctx = null;
+  var cols = 0, rows = 0, density = null, out = null, ctx = null;
 
   function lcg(seed) {
     var s = seed >>> 0;
@@ -303,7 +299,7 @@ if (clone) {
     }
 
     // traces rising to varied heights, some with one 45-degree jog
-    traces = [];
+
     for (var tx = 3; tx < cols - 4; tx += 4 + Math.floor(rnd() * 6)) {
       var topY = Math.floor(rows * (0.12 + rnd() * 0.62));
       var jog = rnd() < 0.5 ? (rnd() < 0.5 ? -1 : 1) * (2 + Math.floor(rnd() * 5)) : 0;
@@ -331,11 +327,6 @@ if (clone) {
         ox.fillStyle = grey(0.75);
         ox.fillRect(pts[1][0], pts[1][1] - 1, 1, 1);
       }
-      var len = 0;
-      for (var s = 1; s < pts.length; s++) {
-        len += Math.hypot(pts[s][0] - pts[s - 1][0], pts[s][1] - pts[s - 1][1]);
-      }
-      traces.push({ pts: pts, len: len, phase: rnd() });
     }
 
     // two horizontal buses tying the board together
@@ -358,30 +349,10 @@ if (clone) {
     out = ctx.createImageData(cols, rows);
   }
 
-  function frame(t) {
+  function draw() {
     if (!density) return;
     var d = out.data;
-    var drift = Math.floor(t / 280); // the grain breathes
     var fade = rows * 0.42;
-
-    // pulses: a bright blip climbing each trace at constant speed
-    var dots = [];
-    traces.forEach(function (tr) {
-      var pos = ((t / 1000) * 22 + tr.phase * tr.len * 2.2) % (tr.len * 2.2);
-      if (pos > tr.len) return; // the gap between blips
-      var walked = tr.len - pos; // climb bottom to top
-      for (var s = 1; s < tr.pts.length; s++) {
-        var a = tr.pts[s - 1], b = tr.pts[s];
-        var seg = Math.hypot(b[0] - a[0], b[1] - a[1]);
-        if (walked <= seg) {
-          var k = walked / seg;
-          dots.push([Math.round(a[0] + (b[0] - a[0]) * k), Math.round(a[1] + (b[1] - a[1]) * k)]);
-          break;
-        }
-        walked -= seg;
-      }
-    });
-
     for (var y = 0; y < rows; y++) {
       var env = y < fade ? Math.pow(y / fade, 1.8) : 1;
       var mist = 0.12 * (y / rows);
@@ -389,7 +360,7 @@ if (clone) {
         var idx = y * cols + x;
         var ink = (density[idx] + mist) * env;
         var o = idx * 4;
-        if (ink > (BAYER[y % 8][(x + drift) % 8] + 0.5) / 64) {
+        if (ink > (BAYER[y % 8][x % 8] + 0.5) / 64) {
           var c = ink > 0.7 ? DEEP : ink > 0.34 ? MID : LIGHT;
           d[o] = c[0]; d[o + 1] = c[1]; d[o + 2] = c[2]; d[o + 3] = 255;
         } else {
@@ -397,38 +368,15 @@ if (clone) {
         }
       }
     }
-    dots.forEach(function (p) {
-      for (var dy = -1; dy <= 1; dy++) {
-        for (var dx = -1; dx <= 1; dx++) {
-          var xx = p[0] + dx, yy = p[1] + dy;
-          if (xx < 0 || yy < 0 || xx >= cols || yy >= rows) continue;
-          var o = (yy * cols + xx) * 4;
-          d[o] = DEEP[0]; d[o + 1] = DEEP[1]; d[o + 2] = DEEP[2]; d[o + 3] = 255;
-        }
-      }
-    });
     ctx.putImageData(out, 0, 0);
   }
 
   build();
-  frame(0);
+  draw();
 
   var rt = 0;
   addEventListener("resize", function () {
     clearTimeout(rt);
-    rt = setTimeout(function () { build(); frame(0); }, 150);
+    rt = setTimeout(function () { build(); draw(); }, 150);
   }, { passive: true });
-
-  if (!animate) return;
-  var running = false, raf = 0, last = 0;
-  function tick(t) {
-    raf = 0;
-    if (!running) return;
-    if (t - last >= 40) { frame(t); last = t; }
-    raf = requestAnimationFrame(tick);
-  }
-  new IntersectionObserver(function (entries) {
-    running = entries[0].isIntersecting;
-    if (running && !raf) raf = requestAnimationFrame(tick);
-  }).observe(host);
 })();

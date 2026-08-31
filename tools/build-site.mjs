@@ -51,7 +51,7 @@ const HEAD = (title, depth) => `<!doctype html>
 <body>`;
 
 const TOPBAR = (depth) => `<header class="top shell">
-  <a class="wordmark" href="${depth}index.html">stanley<span class="dot">·</span>mcp<span class="dot">·</span>playground</a>
+  <a class="wordmark" href="${depth}index.html"><img src="${depth}img/stanley.png" alt=""><span class="brand">Stanley</span><span class="sep">|</span><span class="product">mcp-playground</span></a>
   <nav>
     <a href="${depth}index.html#recipes">Recipes</a>
     <a href="${depth}index.html#skills">Skills</a>

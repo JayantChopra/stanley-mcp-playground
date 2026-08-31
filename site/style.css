@@ -61,10 +61,14 @@ a:hover { color: var(--strike); }
 
 .top { display: flex; align-items: center; justify-content: space-between; padding-top: 22px; padding-bottom: 22px; }
 .wordmark {
-  font-weight: 800; font-size: 1.08rem; letter-spacing: -0.04em;
+  display: inline-flex; align-items: center; gap: 9px;
+  font-size: 1.08rem; letter-spacing: -0.02em;
   color: var(--black); text-decoration: none;
 }
-.wordmark .dot { color: var(--accent); }
+.wordmark img { height: 30px; width: auto; }
+.wordmark .brand { font-weight: 800; }
+.wordmark .sep { color: var(--grey-2); font-weight: 500; }
+.wordmark .product { font-weight: 600; color: var(--navy); }
 .top nav { display: flex; gap: 6px; align-items: center; }
 .top nav a {
   color: var(--black); text-decoration: none; font-size: 0.95rem; font-weight: 600;
