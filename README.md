@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://stanley-cookbook.vercel.app">
-    <img src=".github/assets/header.svg" alt="stanley-mcp-playground" width="100%" />
+    <img src=".github/assets/header.png" alt="stanley-mcp-playground" width="100%" />
   </a>
 </p>
 
@@ -101,7 +101,7 @@ CLAUDE.md         tells Claude to audit connections and route, not guess
 
 ## Status
 
-Recipes `00` through `08` are complete and tested against a live account. Planned next: worked examples with real (redacted) output in every recipe, a meeting-notes-to-post recipe, and a monitoring digest recipe. Track [CHANGELOG.md](CHANGELOG.md).
+Recipes `01` through `09` are complete and tested against a live account. Planned next: worked examples with real (redacted) output in every recipe, a meeting-notes-to-post recipe, and a monitoring digest recipe. Track [CHANGELOG.md](CHANGELOG.md).
 
 ## Community
 

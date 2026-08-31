@@ -122,29 +122,13 @@ a:hover { color: var(--strike); }
   .copy-btn { min-height: 44px; }
 }
 
-/* the conversation card: recipes are conversations. Navy panel, no border. */
-.convo { background: var(--navy); border-radius: 20px; padding: 28px; font-size: 0.94rem; }
-.convo .tag {
-  display: block; font-size: 11px; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.06em; color: var(--purple-light);
-  margin-bottom: 18px;
+/* the turntable prop: a phone spinning through the dither, per the spec's
+   dither-prop recipe. One pixel per cell, scaled up crisp. */
+.prop { position: relative; aspect-ratio: 0.92; max-width: 440px; margin: 0 auto; width: 100%; }
+.prop canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  image-rendering: pixelated;
 }
-.msg { border-radius: 14px; padding: 14px 18px; margin-top: 14px; max-width: 88%; line-height: 1.55; }
-.msg .who {
-  display: block; margin-bottom: 6px;
-  font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;
-}
-.msg-you { background: var(--accent); color: var(--white); margin-left: auto; border-bottom-right-radius: 4px; }
-.msg-you .who { color: var(--tint); }
-.msg-stanley { background: var(--white); color: var(--navy); border-bottom-left-radius: 4px; }
-.msg-stanley .who { color: var(--accent); }
-.msg ul { list-style: none; }
-.msg li { margin-top: 4px; }
-.msg li::before { content: "· "; color: var(--accent); font-weight: 700; }
-.msg li.warn { color: var(--grey-3); }
-.convo .caption { margin-top: 20px; font-size: 0.88rem; }
-.convo .caption a { color: var(--purple-light); text-decoration: none; font-weight: 600; }
-.convo .caption a:hover { color: var(--white); }
 
 /* ---------- motion, per the spec: data-rv reveals + stagger + --p ----------
    JS adds .in and writes --i / --p; this block owns every look. The noscript

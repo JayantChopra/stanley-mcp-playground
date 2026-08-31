@@ -149,17 +149,8 @@ ${TOPBAR("")}
     </div>
     <div class="clone" data-rv style="--d:240ms" data-cmd="${CLONE_CMD}"><code>${CLONE_CMD}</code></div>
   </div>
-  <div class="convo" data-rv style="--d:200ms">
-    <span class="tag">The audit · every setup starts here</span>
-    <div class="msg msg-you"><span class="who">You</span>quick check: what's connected, what's broken, and when do my posts go out?</div>
-    <div class="msg msg-stanley"><span class="who">Stanley</span>here's where things stand:
-      <ul>
-        <li>connected: x · linkedin · github · notion</li>
-        <li class="warn">instagram: session expired, needs a quick reconnect</li>
-        <li>slots: 8:00 am and 12:00 pm</li>
-      </ul>
-    </div>
-    <p class="caption"><a href="recipes/01-first-connection.html">Run it on your own account in recipe 01 →</a></p>
+  <div class="prop" data-rv style="--d:160ms" role="img" aria-label="A phone turning slowly on a turntable, a chat with Stanley on its screen, rendered as halftone dots.">
+    <canvas></canvas>
   </div>
 </section>
 
