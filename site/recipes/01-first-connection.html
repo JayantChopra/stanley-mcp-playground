@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>01 · Connect and run your first loop · stanley-mcp-playground</title>
+<meta name="description" content="A cookbook for the Stanley MCP: workflows for running your content operation from a conversation with Claude.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%23d9482b'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Instrument+Sans:wght@400;500;650&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="top">
+  <a class="wordmark" href="../index.html">stanley<span class="dot">·</span>mcp<span class="dot">·</span>playground</a>
+  <nav>
+    <a href="../index.html#recipes">Recipes</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CONTRIBUTING.md">Contribute</a>
+    <a class="gh" href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>
+  </nav>
+</header>
+<div class="page">
+  <aside class="toc">
+    <span class="kicker">the cookbook</span>
+    <ol>
+      <li><a  href="00-what-stanley-can-do.html"><span class="n">00</span>What Stanley can do</a></li>
+      <li><a class="here" aria-current="page" href="01-first-connection.html"><span class="n">01</span>Connect and run your first loop</a></li>
+      <li><a  href="02-content-calendar.html"><span class="n">02</span>Plan a week in one sitting</a></li>
+      <li><a  href="03-build-in-public.html"><span class="n">03</span>Build in public</a></li>
+      <li><a  href="04-analytics-review.html"><span class="n">04</span>Analytics review</a></li>
+      <li><a  href="05-trend-scouting.html"><span class="n">05</span>Trend scouting</a></li>
+      <li><a  href="06-repurposing.html"><span class="n">06</span>Repurposing</a></li>
+      <li><a  href="07-external-media.html"><span class="n">07</span>External media</a></li>
+      <li><a  href="08-rituals.html"><span class="n">08</span>Rituals</a></li>
+    </ol>
+  </aside>
+  <article>
+<h1>01 · Connect and run your first loop</h1>
+<p><strong>What you get:</strong> Stanley wired into Claude, a verified list of what&#39;s connected, and one post drafted and scheduled.</p>
+<p><strong>Needs:</strong> a Stanley account (<a href="https://getstanley.ai">getstanley.ai</a>) with at least one platform linked.</p>
+<h2>Connect the MCP</h2>
+<p>Three ways in, pick one.</p>
+<p><strong>Claude Code, inside this repo.</strong> The repo ships a <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/.mcp.json">.mcp.json</a> pointing at <code>https://xapi.getstanley.ai/mcp</code>. Open the cloned folder in Claude Code, approve the project MCP server when asked, then run <code>/mcp</code> to sign in.</p>
+<p><strong>Claude Code, any folder.</strong></p>
+<pre><code class="language-bash">claude mcp add --transport http stanley https://xapi.getstanley.ai/mcp
+</code></pre>
+<p>Then <code>/mcp</code> to sign in.</p>
+<p><strong>claude.ai.</strong> Settings → Connectors → Add custom connector, paste the URL above.</p>
+<h2>Audit what&#39;s connected</h2>
+<p>Paste this into Claude:</p>
+<blockquote>
+<p>Ask Stanley to list every platform and integration currently connected for this account, flag anything expired or broken, and show the configured posting slots.</p>
+</blockquote>
+<p>You get back a short rundown: connected accounts, anything with an expired session, missing platforms, and your posting slots with their timezone. Fix gaps at getstanley.ai, not here. Inside this repo, <code>/stanley-start</code> runs the same audit and tells you which recipes your setup can run.</p>
+<h2>First loop: draft, then schedule</h2>
+<ol>
+<li><strong>Draft.</strong> &quot;Ask Stanley for one post in my voice for [your strongest connected platform] about [something you did this week].&quot; The draft arrives wrapped in a platform tag like <code>&lt;tweet&gt;</code>, which is normal (see <a href="00-what-stanley-can-do.html">recipe 00</a>).</li>
+<li><strong>Push back once.</strong> Tell him what reads wrong. He holds voice context between messages, so one round of notes tends to land.</li>
+<li><strong>Schedule rather than publish.</strong> &quot;Schedule this into my next open slot.&quot; Scheduling is reversible and asks no permission; publishing live is the step that checks with you first.</li>
+<li><strong>Look at the calendar.</strong> &quot;Show me my content calendar for the next 7 days.&quot;</li>
+</ol>
+<p>Every other recipe in this cookbook is a bigger version of that loop.</p>
+<h2>When it breaks</h2>
+<ul>
+<li>No <code>message_stanley</code> tool: the server wasn&#39;t approved or your sign-in lapsed. Re-run <code>/mcp</code>.</li>
+<li>&quot;Nothing connected&quot;: link a platform at getstanley.ai first. The cookbook can&#39;t do that part for you.</li>
+<li>The draft sounds like anyone: your voice profile is thin. Paste 3 to 5 posts you wrote yourself and ask Stanley to update it.</li>
+</ul>
+
+<nav class="pager">
+    <a href="00-what-stanley-can-do.html">← 00 · What Stanley can do</a>
+    <a href="02-content-calendar.html">02 · Plan a week in one sitting →</a>
+  </nav>
+  </article>
+</div>
+<footer><div class="foot">
+  <span>Apache-2.0 · a cookbook for the <a href="https://getstanley.ai">Stanley</a> MCP</span>
+  <nav>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CONTRIBUTING.md">Contributing</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CHANGELOG.md">Changelog</a>
+  </nav>
+</div></footer>
+<script src="../app.js"></script>
+</body>
+</html>

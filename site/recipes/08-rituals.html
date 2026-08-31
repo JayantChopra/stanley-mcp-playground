@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>08 · Rituals · stanley-mcp-playground</title>
+<meta name="description" content="A cookbook for the Stanley MCP: workflows for running your content operation from a conversation with Claude.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%23d9482b'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Instrument+Sans:wght@400;500;650&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="top">
+  <a class="wordmark" href="../index.html">stanley<span class="dot">·</span>mcp<span class="dot">·</span>playground</a>
+  <nav>
+    <a href="../index.html#recipes">Recipes</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CONTRIBUTING.md">Contribute</a>
+    <a class="gh" href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>
+  </nav>
+</header>
+<div class="page">
+  <aside class="toc">
+    <span class="kicker">the cookbook</span>
+    <ol>
+      <li><a  href="00-what-stanley-can-do.html"><span class="n">00</span>What Stanley can do</a></li>
+      <li><a  href="01-first-connection.html"><span class="n">01</span>Connect and run your first loop</a></li>
+      <li><a  href="02-content-calendar.html"><span class="n">02</span>Plan a week in one sitting</a></li>
+      <li><a  href="03-build-in-public.html"><span class="n">03</span>Build in public</a></li>
+      <li><a  href="04-analytics-review.html"><span class="n">04</span>Analytics review</a></li>
+      <li><a  href="05-trend-scouting.html"><span class="n">05</span>Trend scouting</a></li>
+      <li><a  href="06-repurposing.html"><span class="n">06</span>Repurposing</a></li>
+      <li><a  href="07-external-media.html"><span class="n">07</span>External media</a></li>
+      <li><a class="here" aria-current="page" href="08-rituals.html"><span class="n">08</span>Rituals</a></li>
+    </ol>
+  </aside>
+  <article>
+<h1>08 · Rituals</h1>
+<p><strong>What you get:</strong> Stanley working unattended: a brief waiting when you wake up, a weekly analytics review, and fresh drafts whenever a scheduled scan finds something worth posting.</p>
+<p><strong>Needs:</strong> at least one platform connected, plus GitHub if you want the build-in-public scanner; run /stanley-start if you are not sure what you have.</p>
+<p>Rituals are recurring jobs that run on cron schedules in your local timezone. Stanley receives no inbound webhooks, so every ritual fires on a clock, never on an event. Hold onto that model and everything below follows from it.</p>
+<h2>The two kinds</h2>
+<p><strong>Built-in rituals</strong> come ready-made: a morning brief, a weekly analytics review, an evening recap, and a build-in-public scanner. Each one toggles active or inactive and takes a local wall-clock delivery time, no cron required. <a href="04-analytics-review.html">Recipe 04</a> covers what the analytics review digs into, and <a href="03-build-in-public.html">recipe 03</a> is the manual version of what the scanner automates.</p>
+<p><strong>Custom recurring tasks</strong> take a cron expression in your local timezone, a fixed interval (every 4 hours), or a one-off delay (in 3 hours). Anything you&#39;d ask Stanley to do by hand, you can put on a clock.</p>
+<h2>Walkthrough</h2>
+<ol>
+<li><p><strong>Start with the morning brief.</strong> It needs a delivery time and nothing else.</p>
+<blockquote>
+<p>Turn on the morning brief and deliver it at 8am my time.</p>
+</blockquote>
+</li>
+<li><p><strong>Add the weekly analytics review.</strong> One review a week is plenty; <a href="04-analytics-review.html">recipe 04</a> shows what it looks at.</p>
+<blockquote>
+<p>Turn on the weekly analytics review, delivered Mondays at 9am.</p>
+</blockquote>
+</li>
+<li><p><strong>Try one custom job.</strong> Plain words work fine, and Stanley converts them to cron behind the scenes.</p>
+<blockquote>
+<p>Every Friday at 4pm, draft one post looking back on what I shipped this week and schedule it into my next open slot.</p>
+</blockquote>
+<p>Stanley stores that as <code>0 16 * * 5</code>, which reads: at 4:00 pm every Friday, in your timezone.</p>
+</li>
+<li><p><strong>Turn an event-shaped wish into a scan.</strong> You can&#39;t have &quot;post when a PR merges&quot;, because nothing pushes events to Stanley. You can have the polling version, which lands within a day and feels the same. Write the cron yourself if you prefer.</p>
+<blockquote>
+<p>Every weekday morning, scan my GitHub activity over the trailing 24 hours and draft an X post for anything newly merged. Use cron 0 9 * * 1-5.</p>
+</blockquote>
+<p><code>0 9 * * 1-5</code> reads: at 9:00 am, Monday through Friday. Each run scans the lookback window, filters for items it hasn&#39;t drafted from before, and writes only from the new ones.</p>
+</li>
+<li><p><strong>Queue a one-off.</strong> Delayed runs use the same machinery once, then disappear.</p>
+<blockquote>
+<p>In 3 hours, check whether my last scheduled post went out and tell me how it&#39;s doing.</p>
+</blockquote>
+</li>
+<li><p><strong>Review what&#39;s running.</strong> Do this whenever you add or change one.</p>
+<blockquote>
+<p>List every ritual and recurring task currently active, with each schedule in plain English.</p>
+</blockquote>
+</li>
+</ol>
+<h2>Where things land</h2>
+<p>The morning brief, analytics review, and evening recap deliver a summary and touch nothing. Drafting jobs (the build-in-public scanner, custom jobs like the Friday recap above) leave drafts behind, and a job you told to schedule puts its draft into a calendar slot, where it publishes when the time arrives like any scheduled post. You can edit or pull anything before its slot. So the safety line sits in how you word the job: if you want a human look before something goes out, say &quot;draft, don&#39;t schedule&quot;. Publishing right now still checks with you first, ritual or not, and the full approval list is in <a href="00-what-stanley-can-do.html">recipe 00</a>.</p>
+<h2>A starter setup</h2>
+<p>Begin with two: the morning brief and the weekly analytics review. Both report rather than post, so they build the habit of checking in with Stanley without touching your calendar. Once the <a href="03-build-in-public.html">recipe 03</a> flow feels routine by hand, switch on the build-in-public scanner and let it run that loop for you. Add custom jobs last, one at a time, and prune any you stop reading.</p>
+<h2>When it breaks</h2>
+<ul>
+<li>A ritual fires at the wrong hour: your timezone setting is off. Run the audit from <a href="01-first-connection.html">recipe 01</a> and check the timezone shown next to your posting slots.</li>
+<li>A scanner keeps drafting nothing: the window was quiet, or the connection it reads from has lapsed. Widen the lookback (&quot;trailing 3 days&quot;) and re-run the <a href="01-first-connection.html">recipe 01</a> audit.</li>
+<li>You asked for &quot;when X happens&quot; and got a schedule back: that&#39;s the design, not a misunderstanding. Pick the tightest interval you can live with, say every 2 hours during your workday.</li>
+<li>Draft volume got out of hand: run the step 6 listing, then tell Stanley which jobs to pause or delete. Turning a ritual off loses nothing already drafted.</li>
+</ul>
+
+<nav class="pager">
+    <a href="07-external-media.html">← 07 · External media</a>
+    <span></span>
+  </nav>
+  </article>
+</div>
+<footer><div class="foot">
+  <span>Apache-2.0 · a cookbook for the <a href="https://getstanley.ai">Stanley</a> MCP</span>
+  <nav>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CONTRIBUTING.md">Contributing</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CHANGELOG.md">Changelog</a>
+  </nav>
+</div></footer>
+<script src="../app.js"></script>
+</body>
+</html>

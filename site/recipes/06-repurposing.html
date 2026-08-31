@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>06 · Repurposing · stanley-mcp-playground</title>
+<meta name="description" content="A cookbook for the Stanley MCP: workflows for running your content operation from a conversation with Claude.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%23d9482b'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Instrument+Sans:wght@400;500;650&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="top">
+  <a class="wordmark" href="../index.html">stanley<span class="dot">·</span>mcp<span class="dot">·</span>playground</a>
+  <nav>
+    <a href="../index.html#recipes">Recipes</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CONTRIBUTING.md">Contribute</a>
+    <a class="gh" href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>
+  </nav>
+</header>
+<div class="page">
+  <aside class="toc">
+    <span class="kicker">the cookbook</span>
+    <ol>
+      <li><a  href="00-what-stanley-can-do.html"><span class="n">00</span>What Stanley can do</a></li>
+      <li><a  href="01-first-connection.html"><span class="n">01</span>Connect and run your first loop</a></li>
+      <li><a  href="02-content-calendar.html"><span class="n">02</span>Plan a week in one sitting</a></li>
+      <li><a  href="03-build-in-public.html"><span class="n">03</span>Build in public</a></li>
+      <li><a  href="04-analytics-review.html"><span class="n">04</span>Analytics review</a></li>
+      <li><a  href="05-trend-scouting.html"><span class="n">05</span>Trend scouting</a></li>
+      <li><a class="here" aria-current="page" href="06-repurposing.html"><span class="n">06</span>Repurposing</a></li>
+      <li><a  href="07-external-media.html"><span class="n">07</span>External media</a></li>
+      <li><a  href="08-rituals.html"><span class="n">08</span>Rituals</a></li>
+    </ol>
+  </aside>
+  <article>
+<h1>06 · Repurposing</h1>
+<p><strong>What you get:</strong> one post you already wrote, redrafted for every platform you&#39;re on, with quote cards and carousels staged as media.</p>
+<p><strong>Needs:</strong> X connected as the usual source, plus whichever targets you want to hit (LinkedIn, Threads, Instagram, Substack Notes); run /stanley-start if you are not sure what you have.</p>
+<p>Good content dies in one feed. A thread that worked on X can carry a LinkedIn post and an Instagram carousel without you writing anything new, so Stanley does the conversion and you approve the results.</p>
+<h2>Pick a source</h2>
+<p>Stanley starts from any of these:</p>
+<ul>
+<li>a URL to one of your X threads or posts</li>
+<li>a LinkedIn post, linked or pasted in</li>
+<li>&quot;my best post this month&quot;, which pulls the top performer from analytics the way <a href="04-analytics-review.html">recipe 04</a> does</li>
+</ul>
+<p>You don&#39;t need to copy anything over. Hand him the link or the description and he fetches the rest.</p>
+<h2>Core walkthrough</h2>
+<ol>
+<li><p>Name the source and the targets in one message.</p>
+<blockquote>
+<p>Take this thread and repurpose it: [URL]. I want a LinkedIn post, a Threads chain, and an Instagram carousel.</p>
+</blockquote>
+</li>
+<li><p>Stanley replies with one draft per platform, each wrapped in a tag like <code>&lt;linkedin_post&gt;</code> or <code>&lt;threads_post&gt;</code>. Read them as standalone posts, not translations; the LinkedIn version has to work for someone who never saw the thread. Ask for changes the way you&#39;d ask a person, and if you edit a draft yourself, paste it back with the wrapper tag intact so Stanley knows which platform&#39;s rules to check it against.</p>
+<blockquote>
+<p>The LinkedIn draft buries the lead. Open with the result from tweet 4 and cut the hashtags.</p>
+</blockquote>
+</li>
+<li><p>For a quote card, point at your strongest single post. Stanley screenshots the X post into an image and stages it as media you can attach to a draft.</p>
+<blockquote>
+<p>Turn this post into a quote-card image: [URL]. Attach it to the LinkedIn draft.</p>
+</blockquote>
+</li>
+<li><p>For a carousel, he renders the thread into slides. Tell him how to split it, or let him follow the thread&#39;s own beats.</p>
+<blockquote>
+<p>Build a carousel from that thread, one tweet per slide, and save it for Instagram.</p>
+</blockquote>
+</li>
+<li><p>Approve what you like and tell Stanley where to put it.</p>
+<blockquote>
+<p>Schedule the LinkedIn post and the Threads chain into my next open slots. Hold the Instagram carousel as a draft.</p>
+</blockquote>
+</li>
+</ol>
+<h2>Where things land</h2>
+<p>Text drafts go onto your calendar as scheduled drafts, which you can move or delete later (<a href="02-content-calendar.html">recipe 02</a> covers the calendar). Quote cards and carousel slides are staged media, attached to whichever drafts you named. Instagram is the exception: Stanley prepares the carousel and caption, but nothing on Instagram ever auto-publishes, so the finished slides wait in your photo gallery until you post them yourself.</p>
+<p>Character limits, file sizes, and per-platform attachment rules live in <a href="00-what-stanley-can-do.html">recipe 00</a>. Stanley enforces them while drafting, so a thread too long for a single Threads post comes back as a chain instead of an error.</p>
+<h2>Going the other way</h2>
+<p>The same pattern runs in reverse. Suppose a LinkedIn post of yours landed and you want it on X:</p>
+<blockquote>
+<p>This LinkedIn post did well: [URL]. Cut it down to a single X post, and give me a thread version too so I can compare.</p>
+</blockquote>
+<h2>When it goes wrong</h2>
+<p><strong>Stanley can&#39;t read the source URL.</strong> He reads public posts; a link behind a login wall stays closed to him, so paste the text in instead.</p>
+<p><strong>Drafts for one platform land nowhere or error out.</strong> The connection has probably expired. <a href="01-first-connection.html">Recipe 01</a> covers reconnecting.</p>
+<p><strong>The converted draft sounds generic.</strong> Name the lines to keep verbatim; Stanley carries them across unchanged.</p>
+<p><strong>The carousel splits in odd places.</strong> Give him the boundaries yourself: say slide 1 is the hook, slides 2 to 5 are one tip each, and the last slide is the ask.</p>
+
+<nav class="pager">
+    <a href="05-trend-scouting.html">← 05 · Trend scouting</a>
+    <a href="07-external-media.html">07 · External media →</a>
+  </nav>
+  </article>
+</div>
+<footer><div class="foot">
+  <span>Apache-2.0 · a cookbook for the <a href="https://getstanley.ai">Stanley</a> MCP</span>
+  <nav>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CONTRIBUTING.md">Contributing</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CHANGELOG.md">Changelog</a>
+  </nav>
+</div></footer>
+<script src="../app.js"></script>
+</body>
+</html>

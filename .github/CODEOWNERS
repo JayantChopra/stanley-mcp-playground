@@ -1,0 +1,7 @@
+# Default owner for everything in the repo.
+* @JayantChopra
+
+# The approval model and MCP endpoint are security surfaces; changes here get extra scrutiny.
+/.claude/skills/ @JayantChopra
+/.mcp.json @JayantChopra
+/SECURITY.md @JayantChopra

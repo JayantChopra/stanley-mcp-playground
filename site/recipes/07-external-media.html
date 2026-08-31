@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>07 · External media · stanley-mcp-playground</title>
+<meta name="description" content="A cookbook for the Stanley MCP: workflows for running your content operation from a conversation with Claude.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%23d9482b'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Instrument+Sans:wght@400;500;650&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="top">
+  <a class="wordmark" href="../index.html">stanley<span class="dot">·</span>mcp<span class="dot">·</span>playground</a>
+  <nav>
+    <a href="../index.html#recipes">Recipes</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CONTRIBUTING.md">Contribute</a>
+    <a class="gh" href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>
+  </nav>
+</header>
+<div class="page">
+  <aside class="toc">
+    <span class="kicker">the cookbook</span>
+    <ol>
+      <li><a  href="00-what-stanley-can-do.html"><span class="n">00</span>What Stanley can do</a></li>
+      <li><a  href="01-first-connection.html"><span class="n">01</span>Connect and run your first loop</a></li>
+      <li><a  href="02-content-calendar.html"><span class="n">02</span>Plan a week in one sitting</a></li>
+      <li><a  href="03-build-in-public.html"><span class="n">03</span>Build in public</a></li>
+      <li><a  href="04-analytics-review.html"><span class="n">04</span>Analytics review</a></li>
+      <li><a  href="05-trend-scouting.html"><span class="n">05</span>Trend scouting</a></li>
+      <li><a  href="06-repurposing.html"><span class="n">06</span>Repurposing</a></li>
+      <li><a class="here" aria-current="page" href="07-external-media.html"><span class="n">07</span>External media</a></li>
+      <li><a  href="08-rituals.html"><span class="n">08</span>Rituals</a></li>
+    </ol>
+  </aside>
+  <article>
+<h1>07 · External media</h1>
+<p><strong>What you get:</strong> an asset made anywhere else (a Canva export, a generated image, a screen recording) staged into Stanley and attached to a scheduled draft.</p>
+<p><strong>Needs:</strong> Stanley connected with at least one platform linked, plus any outside tool that hands you a public HTTPS URL; run <code>/stanley-start</code> if you are not sure what you have.</p>
+<h2>The contract</h2>
+<p>Stanley stages any file behind a public HTTPS URL, within the size caps, and attaches it to your drafts. That&#39;s the whole deal. He fetches the file, stores it, and returns a permanent media key that outlives the original link. The caps you&#39;ll hit day to day: images up to 5 MB, video up to 50 MB and under 5 minutes, and an X draft takes 1 to 4 images or one video. The full table lives in <a href="00-what-stanley-can-do.html#hard-limits">recipe 00</a>.</p>
+<p>Because the contract is a URL, the tool on the other end doesn&#39;t matter. Canva and Recraft show up below as worked examples, not requirements; swap in whatever you use.</p>
+<h2>The general pattern</h2>
+<ol>
+<li><p><strong>Make the asset</strong> in your outside tool, then get a URL that serves the file itself. A page that displays the image doesn&#39;t count. The link has to return the file when fetched, which most tools label export, download, or direct link.</p>
+</li>
+<li><p><strong>Stage it.</strong> Paste the URL to Claude:</p>
+<blockquote>
+<p>Ask Stanley to stage this image and give me the media key: https://...</p>
+</blockquote>
+</li>
+<li><p><strong>Attach it.</strong> Name the key, or just point at what he staged:</p>
+<blockquote>
+<p>Now draft an X post about [topic] with that image attached.</p>
+</blockquote>
+</li>
+<li><p><strong>Schedule it.</strong> Reversible, so it asks no permission:</p>
+<blockquote>
+<p>Put it in my next open slot.</p>
+</blockquote>
+</li>
+</ol>
+<h2>Worked path: a design tool</h2>
+<p>Suppose you&#39;ve built a launch graphic in Canva. Export it, then either host the file somewhere public (a bucket, a GitHub repo, your own site) or grab a share link that serves the raw file rather than an editor page. Then hand it over:</p>
+<blockquote>
+<p>Ask Stanley to stage this PNG from my Canva export, then draft a LinkedIn post announcing [the thing] with it attached and schedule it for tomorrow morning.</p>
+</blockquote>
+<p>One message covers stage, draft, and schedule; Stanley runs the steps in order and shows you the draft in its <code>&lt;linkedin_post&gt;</code> wrapper before anything lands on the calendar.</p>
+<h2>Worked path: an image generator</h2>
+<p>Generators like Recraft hand back a URL per finished image, and those links tend to expire. Stage first, decide later. The media key stays valid after the source link dies, so one good image can serve drafts for weeks.</p>
+<blockquote>
+<p>Ask Stanley to stage this generated image and show me the key so I can reuse it later: https://...</p>
+</blockquote>
+<h2>Video and anything else with a URL</h2>
+<p>The same seam carries video. A Loom-style screen recording, a demo clip out of your editor, a GIF from wherever: if the link is public and the file fits the caps, Stanley stages it like any image.</p>
+<blockquote>
+<p>Ask Stanley to stage this demo video and attach it to a new X draft teasing the feature: https://...</p>
+</blockquote>
+<p>One video per X post, and it takes the place of the image slots.</p>
+<h2>Where things land</h2>
+<p>Staging alone changes nothing visible; the file sits in Stanley&#39;s storage under its key until a draft claims it. An attached draft waits on the calendar (or in your drafts) with the media bound to it. A scheduled draft posts on its own when its slot arrives; publishing right now is the step that asks for your approval. Instagram assets go to the photo gallery for you to compose and post by hand.</p>
+<h2>Fork and extend</h2>
+<p>This repo is a template, so wire your own tools into the front half of the pattern. Connect a design tool or a generator to Claude as an MCP server or connector, and the loop runs in one conversation: Claude asks your tool for an asset, gets a URL back, and passes it straight to Stanley. Keep API keys in your environment or your MCP client&#39;s config, never in the repo; a public cookbook with a live key committed to it is a bad week waiting to happen.</p>
+<p>Whatever you plug in, the seam holds: your tool produces a URL, Stanley stages it, the draft carries the media key.</p>
+<h2>When it breaks</h2>
+<ul>
+<li><strong>Stanley can&#39;t fetch the URL.</strong> It needs a login or isn&#39;t public. Open it in a private browser window; if you see a sign-in page, so does he.</li>
+<li><strong>The link opens a page, not a file.</strong> Design-tool share links usually point at an editor view. Find the export or direct-download URL instead.</li>
+<li><strong>Rejected for size or format.</strong> Re-export smaller or convert (images JPG, PNG, or WebP; video MP4 or MOV); the caps are in <a href="00-what-stanley-can-do.html">recipe 00</a>.</li>
+<li><strong>The generator link died before you staged it.</strong> Regenerate and stage right away this time. The key is permanent; the source link never was.</li>
+<li><strong>No <code>message_stanley</code> tool at all.</strong> That&#39;s connection trouble, not a media problem, and <a href="01-first-connection.html">recipe 01</a> covers it.</li>
+</ul>
+
+<nav class="pager">
+    <a href="06-repurposing.html">← 06 · Repurposing</a>
+    <a href="08-rituals.html">08 · Rituals →</a>
+  </nav>
+  </article>
+</div>
+<footer><div class="foot">
+  <span>Apache-2.0 · a cookbook for the <a href="https://getstanley.ai">Stanley</a> MCP</span>
+  <nav>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CONTRIBUTING.md">Contributing</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CHANGELOG.md">Changelog</a>
+  </nav>
+</div></footer>
+<script src="../app.js"></script>
+</body>
+</html>

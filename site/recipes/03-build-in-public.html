@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>03 · Build in public · stanley-mcp-playground</title>
+<meta name="description" content="A cookbook for the Stanley MCP: workflows for running your content operation from a conversation with Claude.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%23d9482b'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Instrument+Sans:wght@400;500;650&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="top">
+  <a class="wordmark" href="../index.html">stanley<span class="dot">·</span>mcp<span class="dot">·</span>playground</a>
+  <nav>
+    <a href="../index.html#recipes">Recipes</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CONTRIBUTING.md">Contribute</a>
+    <a class="gh" href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>
+  </nav>
+</header>
+<div class="page">
+  <aside class="toc">
+    <span class="kicker">the cookbook</span>
+    <ol>
+      <li><a  href="00-what-stanley-can-do.html"><span class="n">00</span>What Stanley can do</a></li>
+      <li><a  href="01-first-connection.html"><span class="n">01</span>Connect and run your first loop</a></li>
+      <li><a  href="02-content-calendar.html"><span class="n">02</span>Plan a week in one sitting</a></li>
+      <li><a class="here" aria-current="page" href="03-build-in-public.html"><span class="n">03</span>Build in public</a></li>
+      <li><a  href="04-analytics-review.html"><span class="n">04</span>Analytics review</a></li>
+      <li><a  href="05-trend-scouting.html"><span class="n">05</span>Trend scouting</a></li>
+      <li><a  href="06-repurposing.html"><span class="n">06</span>Repurposing</a></li>
+      <li><a  href="07-external-media.html"><span class="n">07</span>External media</a></li>
+      <li><a  href="08-rituals.html"><span class="n">08</span>Rituals</a></li>
+    </ol>
+  </aside>
+  <article>
+<h1>03 · Build in public</h1>
+<p><strong>What you get:</strong> your recent GitHub activity turned into story posts, drafted per platform and sitting in your calendar.</p>
+<p><strong>Needs:</strong> GitHub connected to Stanley, plus at least one platform to post to. Run <code>/stanley-start</code> if you are not sure what you have.</p>
+<h2>Why the diff matters</h2>
+<p>Posts about code live or die on one concrete detail. &quot;Shipped a big refactor&quot; says nothing, but &quot;deleted a 400-line hand-rolled parser and replaced it with 30 lines of grammar rules&quot; is a story someone might finish. Stanley can read the actual diff through your GitHub connection, so make him quote the real change instead of paraphrasing the PR title. Every prompt below leans on that.</p>
+<h2>The walkthrough</h2>
+<ol>
+<li><p><strong>Pick a lookback window.</strong> Anywhere from 1 to 30 days. Seven days suits a weekly posting habit, while 30 catches you up after a quiet month.</p>
+<blockquote>
+<p>Ask Stanley to scan my GitHub activity from the last 7 days and shortlist the story-worthy changes: shipped features, gnarly bug hunts, decisions where we picked one tradeoff over another. Skip dependency bumps and formatting churn.</p>
+</blockquote>
+</li>
+<li><p><strong>Pick one item from the shortlist.</strong> Stanley comes back with a handful of candidates and a line on why each might carry a post. Choose the one you&#39;d tell a colleague about over coffee. If nothing on the list feels like a story, widen the window or name a repo he missed.</p>
+</li>
+<li><p><strong>Have him read the diff.</strong> This is the step that separates a story from a changelog entry.</p>
+<blockquote>
+<p>Take the parser PR from that list and read the full diff. Pull out the detail that makes it a story: what the code did before, what it does now, and any number worth quoting, like lines deleted or files touched.</p>
+</blockquote>
+</li>
+<li><p><strong>Draft per platform.</strong> A small fix wants a single post; a bigger ship earns a thread.</p>
+<blockquote>
+<p>Draft this as one X post in my voice. Quote the real change from the diff, not the PR title.</p>
+</blockquote>
+<p>For the bigger version:</p>
+<blockquote>
+<p>This one deserves more room. Draft an X thread: open on the problem, walk through the wrong turn, land on the fix. Then adapt the thread into a single LinkedIn post.</p>
+</blockquote>
+</li>
+<li><p><strong>Push back once, then schedule.</strong> Tell him what reads wrong before anything gets a slot.</p>
+<blockquote>
+<p>The hook is weak, lead with the number instead. Then schedule the thread into my next open X slot and the LinkedIn post the day after.</p>
+</blockquote>
+</li>
+</ol>
+<h2>The on-demand variant</h2>
+<p>Just merged something worth talking about? Skip the scan and point him straight at it.</p>
+<blockquote>
+<p>Here&#39;s the PR I just merged: [link, or repo name plus PR number]. Read the diff and turn it into a single X post. Lead with what changed in the code, not the PR title.</p>
+</blockquote>
+<p>The same move works with a single commit hash, and it lands best right after you merge, while you still remember why the change was hard.</p>
+<h2>Where things land</h2>
+<p>Scheduled drafts sit in your Stanley calendar, movable and deletable, and scheduling asks no permission because you can undo it. Nothing goes live without your explicit approval. Drafts arrive wrapped in platform tags like <code>&lt;tweet&gt;</code>; keep the wrapper when you pass one back. Character and media limits live in <a href="00-what-stanley-can-do.html">recipe 00</a>.</p>
+<h2>When it breaks</h2>
+<ul>
+<li><strong>Stanley says he can&#39;t see GitHub.</strong> The connection is missing or the session expired. <a href="01-first-connection.html">Recipe 01</a> covers the audit and where to fix it.</li>
+<li><strong>The shortlist is noise.</strong> Merge commits and version bumps mean your filter got lost. Restate what counts as a story and name the repos that matter.</li>
+<li><strong>The draft reads like a changelog.</strong> He summarized instead of reading the diff. Send it back: &quot;Read the actual diff and quote one specific change.&quot;</li>
+<li><strong>The work you want is older than the window.</strong> Lookback caps at 30 days, so reach older work through the on-demand variant with a direct PR link.</li>
+</ul>
+<h2>Make it a habit</h2>
+<p>Once this loop works by hand, <a href="08-rituals.html">recipe 08</a> turns it into a ritual: a recurring scan of your GitHub activity that drafts from newly merged PRs without you asking.</p>
+
+<nav class="pager">
+    <a href="02-content-calendar.html">← 02 · Plan a week in one sitting</a>
+    <a href="04-analytics-review.html">04 · Analytics review →</a>
+  </nav>
+  </article>
+</div>
+<footer><div class="foot">
+  <span>Apache-2.0 · a cookbook for the <a href="https://getstanley.ai">Stanley</a> MCP</span>
+  <nav>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CONTRIBUTING.md">Contributing</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CHANGELOG.md">Changelog</a>
+  </nav>
+</div></footer>
+<script src="../app.js"></script>
+</body>
+</html>

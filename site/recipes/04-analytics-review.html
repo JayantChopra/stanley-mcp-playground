@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>04 · Analytics review · stanley-mcp-playground</title>
+<meta name="description" content="A cookbook for the Stanley MCP: workflows for running your content operation from a conversation with Claude.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%23d9482b'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Instrument+Sans:wght@400;500;650&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="top">
+  <a class="wordmark" href="../index.html">stanley<span class="dot">·</span>mcp<span class="dot">·</span>playground</a>
+  <nav>
+    <a href="../index.html#recipes">Recipes</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CONTRIBUTING.md">Contribute</a>
+    <a class="gh" href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>
+  </nav>
+</header>
+<div class="page">
+  <aside class="toc">
+    <span class="kicker">the cookbook</span>
+    <ol>
+      <li><a  href="00-what-stanley-can-do.html"><span class="n">00</span>What Stanley can do</a></li>
+      <li><a  href="01-first-connection.html"><span class="n">01</span>Connect and run your first loop</a></li>
+      <li><a  href="02-content-calendar.html"><span class="n">02</span>Plan a week in one sitting</a></li>
+      <li><a  href="03-build-in-public.html"><span class="n">03</span>Build in public</a></li>
+      <li><a class="here" aria-current="page" href="04-analytics-review.html"><span class="n">04</span>Analytics review</a></li>
+      <li><a  href="05-trend-scouting.html"><span class="n">05</span>Trend scouting</a></li>
+      <li><a  href="06-repurposing.html"><span class="n">06</span>Repurposing</a></li>
+      <li><a  href="07-external-media.html"><span class="n">07</span>External media</a></li>
+      <li><a  href="08-rituals.html"><span class="n">08</span>Rituals</a></li>
+    </ol>
+  </aside>
+  <article>
+<h1>04 · Analytics review</h1>
+<p><strong>What you get:</strong> a weekly read of your own numbers that ends as next week&#39;s plan, ready to hand to <a href="02-content-calendar.html">recipe 02</a>.</p>
+<p><strong>Needs:</strong> at least one platform publishing through Stanley, plus a few weeks of posting history on it; run /stanley-start if you are not sure what you have.</p>
+<p>One warning up front: the numbers only mean something once Stanley has history to query. Say you started posting through him last week; the tables come back thin, and any pattern you spot is noise. Give it two or three weeks of steady posting first (<a href="02-content-calendar.html">recipe 02</a> gets you there).</p>
+<p>Under the hood it&#39;s SQL over your historical post metrics: engagement, impressions, reactions, follower trends, posting streaks. You ask in plain English; Stanley writes the query. He can also pull live follower counts and recent post stats when a question calls for them, so &quot;right now&quot; questions work alongside the historical ones.</p>
+<h2>The weekly review</h2>
+<p>Run this once a week, in one conversation, so each answer builds on the last.</p>
+<ol>
+<li><p><strong>Start at the top.</strong> Ask for the winners and, more useful, what they share.</p>
+<blockquote>
+<p>Show my top 5 posts by engagement across all platforms over the last 30 days, and tell me what they have in common: topic, format, platform, time of day.</p>
+</blockquote>
+<p>Expect a ranked list with per-post numbers and a short read on the shared traits. If the pattern he names doesn&#39;t match what you see in the posts, say so and he&#39;ll re-cut the data.</p>
+</li>
+<li><p><strong>Then the bottom.</strong> Weak posts teach as much as strong ones.</p>
+<blockquote>
+<p>Now show the 5 weakest posts from the same window and what those share.</p>
+</blockquote>
+<p>Look for a format or topic that keeps landing at the bottom. That&#39;s your cut list for next week.</p>
+</li>
+<li><p><strong>Compare platforms and formats.</strong></p>
+<blockquote>
+<p>Compare my average engagement by platform and by format for the last 30 days. Where do my ideas perform best?</p>
+</blockquote>
+<p>The answer is a small comparison table. Say threads on X keep beating the LinkedIn versions of the same ideas; that tells you where drafts should start, and what to adapt from there.</p>
+</li>
+<li><p><strong>Check the follower trend.</strong></p>
+<blockquote>
+<p>How have my follower counts moved per platform over the last 60 days? Flag any week that broke the trend.</p>
+</blockquote>
+<p>A longer window smooths out day-to-day wobble. When a week spikes, ask what you posted that week and read the two answers side by side.</p>
+</li>
+<li><p><strong>Check the streak.</strong></p>
+<blockquote>
+<p>What&#39;s my current posting streak, and how does this week&#39;s volume compare with my usual?</p>
+</blockquote>
+</li>
+<li><p><strong>Turn it into a plan.</strong> This is the payoff step, so don&#39;t skip it.</p>
+<blockquote>
+<p>Based on everything above, propose next week&#39;s plan: which topics and formats to double down on, which to drop, and how many posts per platform.</p>
+</blockquote>
+<p>Stanley replies with a plan, not drafts. When it reads right, carry it straight into <a href="02-content-calendar.html">recipe 02</a>: ask him to draft the week and schedule the drafts into your slots.</p>
+</li>
+</ol>
+<h2>Where things land</h2>
+<p>Steps 1 through 6 are read-only; the queries change nothing, and the plan arrives as a message in the conversation. Drafts exist only once you ask for them in the recipe 02 handoff, and those land as scheduled drafts in your calendar slots, reversible as ever. Nothing in this recipe publishes live.</p>
+<h2>Questions worth keeping around</h2>
+<p>The weekly loop isn&#39;t the only shape. A few standalone questions that work any day:</p>
+<blockquote>
+<p>Which of my posts from the last 90 days got the most impressions but the least engagement?</p>
+</blockquote>
+<blockquote>
+<p>Did my engagement change after I moved my posting time?</p>
+</blockquote>
+<blockquote>
+<p>Which format got the most reactions on LinkedIn this quarter?</p>
+</blockquote>
+<blockquote>
+<p>How many followers did I gain on X in the last 7 days, and which posts drove it?</p>
+</blockquote>
+<p>Each comes back as a short table or a sentence with the numbers behind it, and you can keep pulling the thread: &quot;why&quot;, &quot;show me those posts&quot;, and &quot;break that down by week&quot; all work as follow-ups.</p>
+<h2>When it breaks</h2>
+<ul>
+<li>Empty or thin tables: not enough history yet. Post through Stanley for a couple more weeks and rerun the review.</li>
+<li>A platform missing from every answer: its session likely expired. <a href="01-first-connection.html">Recipe 01</a> covers checking and reconnecting.</li>
+<li>Numbers lower than the platform&#39;s own dashboard: the two count different things, and posts published outside Stanley may not be covered. Trust trends within the table over absolute totals.</li>
+<li>He can&#39;t answer a question: rephrase toward what the metrics store holds (engagement, impressions, reactions, followers, streaks). The full capability list and limits live in <a href="00-what-stanley-can-do.html">recipe 00</a>.</li>
+</ul>
+
+<nav class="pager">
+    <a href="03-build-in-public.html">← 03 · Build in public</a>
+    <a href="05-trend-scouting.html">05 · Trend scouting →</a>
+  </nav>
+  </article>
+</div>
+<footer><div class="foot">
+  <span>Apache-2.0 · a cookbook for the <a href="https://getstanley.ai">Stanley</a> MCP</span>
+  <nav>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CONTRIBUTING.md">Contributing</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CHANGELOG.md">Changelog</a>
+  </nav>
+</div></footer>
+<script src="../app.js"></script>
+</body>
+</html>

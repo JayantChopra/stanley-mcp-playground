@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>02 · Plan a week in one sitting · stanley-mcp-playground</title>
+<meta name="description" content="A cookbook for the Stanley MCP: workflows for running your content operation from a conversation with Claude.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%23d9482b'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Instrument+Sans:wght@400;500;650&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="top">
+  <a class="wordmark" href="../index.html">stanley<span class="dot">·</span>mcp<span class="dot">·</span>playground</a>
+  <nav>
+    <a href="../index.html#recipes">Recipes</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CONTRIBUTING.md">Contribute</a>
+    <a class="gh" href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>
+  </nav>
+</header>
+<div class="page">
+  <aside class="toc">
+    <span class="kicker">the cookbook</span>
+    <ol>
+      <li><a  href="00-what-stanley-can-do.html"><span class="n">00</span>What Stanley can do</a></li>
+      <li><a  href="01-first-connection.html"><span class="n">01</span>Connect and run your first loop</a></li>
+      <li><a class="here" aria-current="page" href="02-content-calendar.html"><span class="n">02</span>Plan a week in one sitting</a></li>
+      <li><a  href="03-build-in-public.html"><span class="n">03</span>Build in public</a></li>
+      <li><a  href="04-analytics-review.html"><span class="n">04</span>Analytics review</a></li>
+      <li><a  href="05-trend-scouting.html"><span class="n">05</span>Trend scouting</a></li>
+      <li><a  href="06-repurposing.html"><span class="n">06</span>Repurposing</a></li>
+      <li><a  href="07-external-media.html"><span class="n">07</span>External media</a></li>
+      <li><a  href="08-rituals.html"><span class="n">08</span>Rituals</a></li>
+    </ol>
+  </aside>
+  <article>
+<h1>02 · Plan a week in one sitting</h1>
+<p><strong>What you get:</strong> a full week of posts drafted, reviewed, and scheduled into your posting slots in one working session.</p>
+<p><strong>Needs:</strong> at least one publishing platform connected (X, LinkedIn, Threads, or Substack Notes) and posting slots configured in Stanley. Run /stanley-start if you are not sure what you have.</p>
+<h2>Gather raw material first</h2>
+<p>Batch drafting works when Stanley has something real to work from. Spend five minutes listing the week: what you shipped, what broke, what you changed your mind about, the argument you keep having in Slack. Rough notes beat tidy summaries, because Stanley writes better from specifics than from themes.</p>
+<p>If the material already lives somewhere he can read (GitHub, Notion, Granola meeting notes), point him at it instead of retyping: &quot;summarize my merged PRs from the last 7 days&quot; gets you a starting list. <a href="03-build-in-public.html">Recipe 03</a> builds a whole workflow on that trick.</p>
+<h2>The walkthrough</h2>
+<ol>
+<li><p><strong>Look at the calendar before adding to it.</strong> You want to know what&#39;s booked and which slots are open.</p>
+<blockquote>
+<p>Show me my content calendar for the next 7 days, and list my configured posting slots.</p>
+</blockquote>
+</li>
+<li><p><strong>Dump your notes and ask for a numbered batch.</strong> Name a count per platform so the batch matches the slots you have. Six posts into five open slots is a fight you&#39;ll have later.</p>
+<blockquote>
+<p>Here&#39;s my week: [paste your raw notes]. Draft 4 X posts and 2 LinkedIn posts from this, in my voice. Number them 1 through 6 so we can talk about each one.</p>
+</blockquote>
+</li>
+<li><p><strong>Review the batch in one pass.</strong> Sort the drafts into keep, kill, and redraft, and give notes per draft rather than one vague note for the batch. Keep the wrapper tags (<code>&lt;tweet&gt;</code>, <code>&lt;linkedin_post&gt;</code>) when you paste a draft back.</p>
+<blockquote>
+<p>Keep 1, 3, and 6. Kill 2. Redraft 4 with a blunter opening line, it buries the point. Cut 5 to half the length.</p>
+</blockquote>
+</li>
+<li><p><strong>Bulk-schedule the keepers.</strong> Schedule into your configured slots, not times you invent on the spot; slots exist so you stop deciding &quot;when&quot; per post. Scheduling asks no approval, since it&#39;s reversible. Publishing now is the step that checks with you.</p>
+<blockquote>
+<p>Schedule the approved drafts into my open slots over the next 7 days. Spread them out, and don&#39;t put two posts on the same platform on the same day.</p>
+</blockquote>
+</li>
+<li><p><strong>Move or delete anything that lands wrong.</strong> The calendar isn&#39;t set in stone.</p>
+<blockquote>
+<p>Move the LinkedIn post about the migration to Thursday&#39;s slot, and delete the scheduled post about the offsite.</p>
+</blockquote>
+</li>
+<li><p><strong>Check the week view.</strong> End the session looking at the thing you built.</p>
+<blockquote>
+<p>Show me the calendar for the next 7 days again.</p>
+</blockquote>
+</li>
+</ol>
+<p>Prefer to run this hands-off? The repo ships a <code>stanley-week-plan</code> skill that walks Claude through the same flow with you: it gathers your raw material, requests the batch, iterates until you&#39;re happy, and bulk-schedules only after you approve.</p>
+<h2>Where things land</h2>
+<p>Nothing in this recipe goes live during the session. Fresh drafts sit unscheduled in Stanley&#39;s calendar until step 4. Once scheduled, each post sits in its slot and publishes on its own when the time arrives. Instagram drafts are the exception: they wait in the calendar for you to press post by hand. If you want something out the door right now, say so, and Stanley asks for your approval before publishing.</p>
+<h2>When it breaks</h2>
+<ul>
+<li><strong>No posting slots configured.</strong> There&#39;s nothing to bulk-schedule into. Set slots up at getstanley.ai, then rerun step 1.</li>
+<li><strong>The whole batch sounds the same.</strong> Your raw material was thin. Fewer posts from more specific notes beats six variations on one idea.</li>
+<li><strong>A draft blows a platform limit.</strong> Character and media limits live in <a href="00-what-stanley-can-do.html">recipe 00</a>; ask Stanley to cut it to fit or split it into a thread.</li>
+<li><strong>Stanley loses track of which draft is which.</strong> Ask him to relist the batch with numbers and current status before you keep reviewing.</li>
+<li><strong><code>message_stanley</code> missing or erroring.</strong> That&#39;s connection trouble, covered in <a href="01-first-connection.html">recipe 01</a>.</li>
+</ul>
+
+<nav class="pager">
+    <a href="01-first-connection.html">← 01 · Connect and run your first loop</a>
+    <a href="03-build-in-public.html">03 · Build in public →</a>
+  </nav>
+  </article>
+</div>
+<footer><div class="foot">
+  <span>Apache-2.0 · a cookbook for the <a href="https://getstanley.ai">Stanley</a> MCP</span>
+  <nav>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CONTRIBUTING.md">Contributing</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a>
+    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CHANGELOG.md">Changelog</a>
+  </nav>
+</div></footer>
+<script src="../app.js"></script>
+</body>
+</html>
