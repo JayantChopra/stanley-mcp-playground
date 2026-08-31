@@ -10,7 +10,7 @@ On Claude's side, Stanley is a single MCP tool called `message_stanley`. You or 
 
 **Calendar and scheduling.** Create, edit, delete, and list post drafts; schedule them into your configured time slots one at a time or as a batch; publish approved drafts on the spot. Scheduling is reversible.
 
-**Drafting.** Platform-native drafts in your voice for X, LinkedIn, Threads, and Substack Notes, run through per-platform quality checks that keep generic AI tone out. He adapts content across formats: thread to single post, X to LinkedIn, post to carousel.
+**Drafting.** Platform-native drafts in your voice for X, LinkedIn, Threads, and Substack Notes, run through per-platform quality checks that keep generic AI tone out. He adapts content across formats and in any direction between platforms: thread to single post, X to LinkedIn and back, a post into a Threads chain, a thread into a carousel. Sources can be your posts on any connected platform or raw pasted text: notes, transcripts, whatever you have.
 
 **Publishing.** Hands-off native publishing on X, LinkedIn, Threads, and Substack Notes where connected. Instagram is the exception by design: Stanley drafts, schedules, builds carousels, and manages photo assets, but a human presses post.
 
