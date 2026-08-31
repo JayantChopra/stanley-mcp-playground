@@ -42,7 +42,7 @@ The same move works with a single commit hash, and it lands best right after you
 
 ## Where things land
 
-Scheduled drafts sit in your Stanley calendar, movable and deletable, and scheduling asks no permission because you can undo it. Nothing goes live without your explicit approval. Drafts arrive wrapped in platform tags like `<tweet>`; keep the wrapper when you pass one back. Character and media limits live in [recipe 00](00-what-stanley-can-do.md).
+Scheduled drafts sit in your Stanley calendar, movable and deletable, and scheduling asks no permission because you can undo it. Nothing goes live without your explicit approval. Drafts arrive wrapped in platform tags like `<tweet>`; keep the wrapper when you pass one back. Character and media limits live in [recipe 09](09-what-stanley-can-do.md).
 
 ## When it breaks
 

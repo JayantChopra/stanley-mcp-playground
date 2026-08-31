@@ -38,7 +38,7 @@ Research is for finding shapes that work: hook patterns, pacing, formats, angles
 
 ## Where things land
 
-Research replies live in the conversation and nowhere else, so nothing is saved until you say so. A draft you ask Stanley to save or schedule becomes a calendar item, and he'll do that without asking because scheduling is reversible. Publishing live always waits for your explicit yes. Character and media limits per platform are in [recipe 00](00-what-stanley-can-do.md).
+Research replies live in the conversation and nowhere else, so nothing is saved until you say so. A draft you ask Stanley to save or schedule becomes a calendar item, and he'll do that without asking because scheduling is reversible. Publishing live always waits for your explicit yes. Character and media limits per platform are in [recipe 09](09-what-stanley-can-do.md).
 
 ## When it breaks
 

@@ -30,7 +30,7 @@ You get back a short rundown: connected accounts, anything with an expired sessi
 
 ## First loop: draft, then schedule
 
-1. **Draft.** "Ask Stanley for one post in my voice for [your strongest connected platform] about [something you did this week]." The draft arrives wrapped in a platform tag like `<tweet>`, which is normal (see [recipe 00](00-what-stanley-can-do.md)).
+1. **Draft.** "Ask Stanley for one post in my voice for [your strongest connected platform] about [something you did this week]." The draft arrives wrapped in a platform tag like `<tweet>`, which is normal (see [recipe 09](09-what-stanley-can-do.md)).
 2. **Push back once.** Tell him what reads wrong. He holds voice context between messages, so one round of notes tends to land.
 3. **Schedule rather than publish.** "Schedule this into my next open slot." Scheduling is reversible and asks no permission; publishing live is the step that checks with you first.
 4. **Look at the calendar.** "Show me my content calendar for the next 7 days."

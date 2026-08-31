@@ -42,7 +42,7 @@ You don't need to copy anything over. Hand him the link or the description and h
 
 Text drafts go onto your calendar as scheduled drafts, which you can move or delete later ([recipe 02](02-content-calendar.md) covers the calendar). Quote cards and carousel slides are staged media, attached to whichever drafts you named. Instagram is the exception: Stanley prepares the carousel and caption, but nothing on Instagram ever auto-publishes, so the finished slides wait in your photo gallery until you post them yourself.
 
-Character limits, file sizes, and per-platform attachment rules live in [recipe 00](00-what-stanley-can-do.md). Stanley enforces them while drafting, so a thread too long for a single Threads post comes back as a chain instead of an error.
+Character limits, file sizes, and per-platform attachment rules live in [recipe 09](09-what-stanley-can-do.md). Stanley enforces them while drafting, so a thread too long for a single Threads post comes back as a chain instead of an error.
 
 ## Going the other way
 

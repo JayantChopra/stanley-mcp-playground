@@ -11,8 +11,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
+<noscript><style>[data-rv], .stagger > * { opacity: 1 !important; translate: 0 0 !important; } [data-progress] { --p: 1; }</style></noscript>
 </head>
-<body>
+<body data-root="../">
 <header class="top shell">
   <a class="wordmark" href="../index.html">stanley<span class="dot">·</span>mcp<span class="dot">·</span>playground</a>
   <nav>
@@ -26,7 +27,6 @@
   <aside class="toc">
     <span class="kicker">The cookbook</span>
     <ol>
-      <li><a  href="00-what-stanley-can-do.html"><span class="n">00</span>What Stanley can do</a></li>
       <li><a  href="01-first-connection.html"><span class="n">01</span>Connect and run your first loop</a></li>
       <li><a  href="02-content-calendar.html"><span class="n">02</span>Plan a week in one sitting</a></li>
       <li><a class="here" aria-current="page" href="03-build-in-public.html"><span class="n">03</span>Build in public</a></li>
@@ -35,6 +35,7 @@
       <li><a  href="06-repurposing.html"><span class="n">06</span>Repurposing</a></li>
       <li><a  href="07-external-media.html"><span class="n">07</span>External media</a></li>
       <li><a  href="08-rituals.html"><span class="n">08</span>Rituals</a></li>
+      <li><a  href="09-what-stanley-can-do.html"><span class="n">09</span>What Stanley can do</a></li>
     </ol>
   </aside>
   <article>
@@ -79,7 +80,7 @@
 </blockquote>
 <p>The same move works with a single commit hash, and it lands best right after you merge, while you still remember why the change was hard.</p>
 <h2>Where things land</h2>
-<p>Scheduled drafts sit in your Stanley calendar, movable and deletable, and scheduling asks no permission because you can undo it. Nothing goes live without your explicit approval. Drafts arrive wrapped in platform tags like <code>&lt;tweet&gt;</code>; keep the wrapper when you pass one back. Character and media limits live in <a href="00-what-stanley-can-do.html">recipe 00</a>.</p>
+<p>Scheduled drafts sit in your Stanley calendar, movable and deletable, and scheduling asks no permission because you can undo it. Nothing goes live without your explicit approval. Drafts arrive wrapped in platform tags like <code>&lt;tweet&gt;</code>; keep the wrapper when you pass one back. Character and media limits live in <a href="09-what-stanley-can-do.html">recipe 09</a>.</p>
 <h2>When it breaks</h2>
 <ul>
 <li><strong>Stanley says he can&#39;t see GitHub.</strong> The connection is missing or the session expired. <a href="01-first-connection.html">Recipe 01</a> covers the audit and where to fix it.</li>
@@ -103,10 +104,11 @@
     <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CONTRIBUTING.md">Contributing</a>
     <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/SECURITY.md">Security</a>
     <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a>
-    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CHANGELOG.md">Changelog</a>
+    <a href="../llms.txt">llms.txt</a>
   </nav>
 </div>
 <div class="foot-mark" aria-hidden="true">stanley<span class="dot">·</span>mcp<span class="dot">·</span>playground</div>
+<div class="woods" aria-hidden="true"><canvas></canvas></div>
 </footer>
 <script src="../app.js"></script>
 </body>

@@ -56,13 +56,12 @@ On claude.ai instead: add `https://xapi.getstanley.ai/mcp` as a custom connector
                                      * Instagram drafts wait for your hand, by design
 ```
 
-On Claude's side, Stanley is a single MCP tool with persistent conversation state, so recipes are conversation patterns rather than API call sequences. The full capability sheet, limits, and approval model live in [recipe 00](recipes/00-what-stanley-can-do.md).
+On Claude's side, Stanley is a single MCP tool with persistent conversation state, so recipes are conversation patterns rather than API call sequences. The full capability sheet, limits, and approval model live in [recipe 09](recipes/09-what-stanley-can-do.md).
 
 ## Recipes
 
 | # | Recipe | In one line |
 |---|--------|-------------|
-| 00 | [What Stanley can do](recipes/00-what-stanley-can-do.md) | the capability reference every other recipe leans on |
 | 01 | [Connect and run your first loop](recipes/01-first-connection.md) | MCP setup, connection audit, draft then schedule |
 | 02 | [Plan a week in one sitting](recipes/02-content-calendar.md) | fill your calendar slots from one working session |
 | 03 | [Build in public](recipes/03-build-in-public.md) | commits and PRs turned into story posts |
@@ -71,6 +70,7 @@ On Claude's side, Stanley is a single MCP tool with persistent conversation stat
 | 06 | [Repurposing](recipes/06-repurposing.md) | one piece of content, every platform |
 | 07 | [External media](recipes/07-external-media.md) | Canva, Recraft, or anything with a URL, attached to drafts |
 | 08 | [Rituals](recipes/08-rituals.md) | morning briefs, cron jobs, poll-based triggers |
+| 09 | [What Stanley can do](recipes/09-what-stanley-can-do.md) | the reference sheet the other eight lean on |
 
 The same recipes render at **[stanley-cookbook.vercel.app](https://stanley-cookbook.vercel.app)**, with copy buttons on every paste-able prompt.
 

@@ -11,8 +11,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
+<noscript><style>[data-rv], .stagger > * { opacity: 1 !important; translate: 0 0 !important; } [data-progress] { --p: 1; }</style></noscript>
 </head>
-<body>
+<body data-root="../">
 <header class="top shell">
   <a class="wordmark" href="../index.html">stanley<span class="dot">·</span>mcp<span class="dot">·</span>playground</a>
   <nav>
@@ -26,7 +27,6 @@
   <aside class="toc">
     <span class="kicker">The cookbook</span>
     <ol>
-      <li><a  href="00-what-stanley-can-do.html"><span class="n">00</span>What Stanley can do</a></li>
       <li><a  href="01-first-connection.html"><span class="n">01</span>Connect and run your first loop</a></li>
       <li><a  href="02-content-calendar.html"><span class="n">02</span>Plan a week in one sitting</a></li>
       <li><a  href="03-build-in-public.html"><span class="n">03</span>Build in public</a></li>
@@ -35,6 +35,7 @@
       <li><a  href="06-repurposing.html"><span class="n">06</span>Repurposing</a></li>
       <li><a  href="07-external-media.html"><span class="n">07</span>External media</a></li>
       <li><a  href="08-rituals.html"><span class="n">08</span>Rituals</a></li>
+      <li><a  href="09-what-stanley-can-do.html"><span class="n">09</span>What Stanley can do</a></li>
     </ol>
   </aside>
   <article>
@@ -104,7 +105,7 @@
 <li>Empty or thin tables: not enough history yet. Post through Stanley for a couple more weeks and rerun the review.</li>
 <li>A platform missing from every answer: its session likely expired. <a href="01-first-connection.html">Recipe 01</a> covers checking and reconnecting.</li>
 <li>Numbers lower than the platform&#39;s own dashboard: the two count different things, and posts published outside Stanley may not be covered. Trust trends within the table over absolute totals.</li>
-<li>He can&#39;t answer a question: rephrase toward what the metrics store holds (engagement, impressions, reactions, followers, streaks). The full capability list and limits live in <a href="00-what-stanley-can-do.html">recipe 00</a>.</li>
+<li>He can&#39;t answer a question: rephrase toward what the metrics store holds (engagement, impressions, reactions, followers, streaks). The full capability list and limits live in <a href="09-what-stanley-can-do.html">recipe 09</a>.</li>
 </ul>
 
 <nav class="pager">
@@ -120,10 +121,11 @@
     <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CONTRIBUTING.md">Contributing</a>
     <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/SECURITY.md">Security</a>
     <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a>
-    <a href="https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CHANGELOG.md">Changelog</a>
+    <a href="../llms.txt">llms.txt</a>
   </nav>
 </div>
 <div class="foot-mark" aria-hidden="true">stanley<span class="dot">·</span>mcp<span class="dot">·</span>playground</div>
+<div class="woods" aria-hidden="true"><canvas></canvas></div>
 </footer>
 <script src="../app.js"></script>
 </body>

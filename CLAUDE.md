@@ -16,5 +16,5 @@ Routing map, also used by stanley-start:
 Ground rules for working in this repo:
 
 - Never publish live, delete, DM, or email through Stanley without the user's explicit go-ahead in this conversation. Scheduling drafts is fine; it's reversible.
-- Recipes state facts from [recipes/00-what-stanley-can-do.md](recipes/00-what-stanley-can-do.md). If Stanley's actual behavior contradicts a recipe, trust Stanley and flag the recipe as stale.
+- Recipes state facts from [recipes/09-what-stanley-can-do.md](recipes/09-what-stanley-can-do.md). If Stanley's actual behavior contradicts a recipe, trust Stanley and flag the recipe as stale.
 - Prose in this repo stays plain and direct. No marketing voice, no hype adjectives, no em dashes.

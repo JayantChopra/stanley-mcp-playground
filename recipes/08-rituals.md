@@ -44,7 +44,7 @@ Rituals are recurring jobs that run on cron schedules in your local timezone. St
 
 ## Where things land
 
-The morning brief, analytics review, and evening recap deliver a summary and touch nothing. Drafting jobs (the build-in-public scanner, custom jobs like the Friday recap above) leave drafts behind, and a job you told to schedule puts its draft into a calendar slot, where it publishes when the time arrives like any scheduled post. You can edit or pull anything before its slot. So the safety line sits in how you word the job: if you want a human look before something goes out, say "draft, don't schedule". Publishing right now still checks with you first, ritual or not, and the full approval list is in [recipe 00](00-what-stanley-can-do.md).
+The morning brief, analytics review, and evening recap deliver a summary and touch nothing. Drafting jobs (the build-in-public scanner, custom jobs like the Friday recap above) leave drafts behind, and a job you told to schedule puts its draft into a calendar slot, where it publishes when the time arrives like any scheduled post. You can edit or pull anything before its slot. So the safety line sits in how you word the job: if you want a human look before something goes out, say "draft, don't schedule". Publishing right now still checks with you first, ritual or not, and the full approval list is in [recipe 09](09-what-stanley-can-do.md).
 
 ## A starter setup
 

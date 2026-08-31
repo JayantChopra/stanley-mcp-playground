@@ -1,0 +1,27 @@
+# stanley-mcp-playground
+
+> A cookbook for the Stanley MCP: nine tested recipes for running a content operation from a conversation with Claude. Stanley is an AI content-marketing agent (https://getstanley.ai). Claude drives him through one MCP tool, message_stanley, served at https://xapi.getstanley.ai/mcp.
+
+Every prompt in these recipes is paste-able as written, and every recipe was run against a real account before landing.
+
+## Recipes
+
+- [01 · Connect and run your first loop](https://stanley-cookbook.vercel.app/recipes/01-first-connection.html): Connect, audit what you've got, and schedule your first post.
+- [02 · Plan a week in one sitting](https://stanley-cookbook.vercel.app/recipes/02-content-calendar.html): One sitting, seven days of posts sitting in your slots.
+- [03 · Build in public](https://stanley-cookbook.vercel.app/recipes/03-build-in-public.html): Your merged PRs, retold as posts worth reading.
+- [04 · Analytics review](https://stanley-cookbook.vercel.app/recipes/04-analytics-review.html): Ask your own numbers questions in plain English.
+- [05 · Trend scouting](https://stanley-cookbook.vercel.app/recipes/05-trend-scouting.html): Find out what your niche is arguing about before you write.
+- [06 · Repurposing](https://stanley-cookbook.vercel.app/recipes/06-repurposing.html): Write it once, then let it work every platform.
+- [07 · External media](https://stanley-cookbook.vercel.app/recipes/07-external-media.html): Made something in Canva? Hand Stanley the URL.
+- [08 · Rituals](https://stanley-cookbook.vercel.app/recipes/08-rituals.html): Morning briefs and Friday recaps, running on cron.
+- [09 · What Stanley can do](https://stanley-cookbook.vercel.app/recipes/09-what-stanley-can-do.html): Limits, approvals, and everything Stanley can do.
+
+## Source
+
+- [Repository](https://github.com/JayantChopra/stanley-mcp-playground): the same recipes as markdown, plus five Claude Code skills under .claude/skills/ and a project .mcp.json that registers the Stanley MCP on clone.
+- Connect from any Claude Code session: claude mcp add --transport http stanley https://xapi.getstanley.ai/mcp
+- [Contributing](https://github.com/JayantChopra/stanley-mcp-playground/blob/main/CONTRIBUTING.md) · [Security](https://github.com/JayantChopra/stanley-mcp-playground/blob/main/SECURITY.md) · Apache-2.0
+
+## Design
+
+- This site follows the halftone design system; the spec is published at https://design-template-jet.vercel.app/llms.txt

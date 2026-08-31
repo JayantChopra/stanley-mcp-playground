@@ -46,6 +46,6 @@ Nothing in this recipe goes live during the session. Fresh drafts sit unschedule
 
 - **No posting slots configured.** There's nothing to bulk-schedule into. Set slots up at getstanley.ai, then rerun step 1.
 - **The whole batch sounds the same.** Your raw material was thin. Fewer posts from more specific notes beats six variations on one idea.
-- **A draft blows a platform limit.** Character and media limits live in [recipe 00](00-what-stanley-can-do.md); ask Stanley to cut it to fit or split it into a thread.
+- **A draft blows a platform limit.** Character and media limits live in [recipe 09](09-what-stanley-can-do.md); ask Stanley to cut it to fit or split it into a thread.
 - **Stanley loses track of which draft is which.** Ask him to relist the batch with numbers and current status before you keep reviewing.
 - **`message_stanley` missing or erroring.** That's connection trouble, covered in [recipe 01](01-first-connection.md).

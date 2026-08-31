@@ -19,4 +19,4 @@ Steps:
 6. Only after the user approves the batch, ask Stanley to schedule the keepers into the configured posting slots across the coming week. Never invent times outside the slots.
 7. Relay any moves or deletions the user wants, then close by showing the 7-day calendar.
 
-A draft over a platform limit: point at recipes/00-what-stanley-can-do.md. Connection failures: recipes/01-first-connection.md.
+A draft over a platform limit: point at recipes/09-what-stanley-can-do.md. Connection failures: recipes/01-first-connection.md.

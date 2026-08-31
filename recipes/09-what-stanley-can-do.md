@@ -1,4 +1,4 @@
-# 00 · What Stanley can do
+# 09 · What Stanley can do
 
 Reference sheet for the whole cookbook. Recipes link back here instead of re-explaining capabilities. What's available to you depends on what you've connected, and [recipe 01](01-first-connection.md) shows you how to check.
 

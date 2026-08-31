@@ -19,7 +19,7 @@ Thanks for wanting to add to the cookbook. This document covers how recipes get 
 
 - **Run it before you write it.** Every recipe and skill in this repo has been executed against a real Stanley account. Yours must be too. The cookbook's whole value is that the steps work as written.
 - **Never fabricate output.** If you show what Stanley replies, show what he replied to you, with your personal data redacted. No invented numbers, no imagined results.
-- **The approval model is a stability surface.** The facts in [recipes/00-what-stanley-can-do.md](recipes/00-what-stanley-can-do.md) and the hard rules inside every skill are what keep a cloned cookbook safe to follow. Changes there get the closest review, the way a database project reviews its storage format.
+- **The approval model is a stability surface.** The facts in [recipes/09-what-stanley-can-do.md](recipes/09-what-stanley-can-do.md) and the hard rules inside every skill are what keep a cloned cookbook safe to follow. Changes there get the closest review, the way a database project reviews its storage format.
 - Small, focused PRs land faster than sprawling ones.
 
 ## What makes a recipe
@@ -35,7 +35,7 @@ Recipes live in [recipes/](recipes/), numbered in learning order. Each one follo
 ## (sections as the material demands)
 ```
 
-Beyond the skeleton, every recipe includes three things: a numbered walkthrough where steps pair an instruction with a paste-able prompt in a blockquote, a "where things land" note (calendar slot, staged media, live post, or draft), and a short failure-and-fix section. Link [recipe 00](recipes/00-what-stanley-can-do.md) for limits and [recipe 01](recipes/01-first-connection.md) for connection trouble instead of restating them. Keep files under roughly 110 lines; a recipe that needs more is probably two recipes.
+Beyond the skeleton, every recipe includes three things: a numbered walkthrough where steps pair an instruction with a paste-able prompt in a blockquote, a "where things land" note (calendar slot, staged media, live post, or draft), and a short failure-and-fix section. Link [recipe 09](recipes/09-what-stanley-can-do.md) for limits and [recipe 01](recipes/01-first-connection.md) for connection trouble instead of restating them. Keep files under roughly 110 lines; a recipe that needs more is probably two recipes.
 
 Blockquotes are a contract: anything in `>` is text a reader can paste into Claude verbatim. Write them the way a person types, not the way an API doc reads.
 

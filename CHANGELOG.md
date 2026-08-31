@@ -4,6 +4,11 @@ Notable changes to the cookbook. Format follows [Keep a Changelog](https://keepa
 
 ## [Unreleased]
 
+### Changed
+
+- Recipes renumbered 01 to 09: the walkthroughs now start at 01, and the capability reference moved from 00 to 09, where reference matter belongs.
+- Site restyled to the halftone design system, with the spec's scroll motion, a dithered footer image, and an `llms.txt`.
+
 ## [0.1.0] - 2026-08-31
 
 ### Added

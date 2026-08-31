@@ -6,7 +6,7 @@
 
 ## The contract
 
-Stanley stages any file behind a public HTTPS URL, within the size caps, and attaches it to your drafts. That's the whole deal. He fetches the file, stores it, and returns a permanent media key that outlives the original link. The caps you'll hit day to day: images up to 5 MB, video up to 50 MB and under 5 minutes, and an X draft takes 1 to 4 images or one video. The full table lives in [recipe 00](00-what-stanley-can-do.md#hard-limits).
+Stanley stages any file behind a public HTTPS URL, within the size caps, and attaches it to your drafts. That's the whole deal. He fetches the file, stores it, and returns a permanent media key that outlives the original link. The caps you'll hit day to day: images up to 5 MB, video up to 50 MB and under 5 minutes, and an X draft takes 1 to 4 images or one video. The full table lives in [recipe 09](09-what-stanley-can-do.md#hard-limits).
 
 Because the contract is a URL, the tool on the other end doesn't matter. Canva and Recraft show up below as worked examples, not requirements; swap in whatever you use.
 
@@ -61,6 +61,6 @@ Whatever you plug in, the seam holds: your tool produces a URL, Stanley stages i
 
 - **Stanley can't fetch the URL.** It needs a login or isn't public. Open it in a private browser window; if you see a sign-in page, so does he.
 - **The link opens a page, not a file.** Design-tool share links usually point at an editor view. Find the export or direct-download URL instead.
-- **Rejected for size or format.** Re-export smaller or convert (images JPG, PNG, or WebP; video MP4 or MOV); the caps are in [recipe 00](00-what-stanley-can-do.md).
+- **Rejected for size or format.** Re-export smaller or convert (images JPG, PNG, or WebP; video MP4 or MOV); the caps are in [recipe 09](09-what-stanley-can-do.md).
 - **The generator link died before you staged it.** Regenerate and stage right away this time. The key is permanent; the source link never was.
 - **No `message_stanley` tool at all.** That's connection trouble, not a media problem, and [recipe 01](01-first-connection.md) covers it.

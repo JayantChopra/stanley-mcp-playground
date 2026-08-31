@@ -69,4 +69,4 @@ Each comes back as a short table or a sentence with the numbers behind it, and y
 - Empty or thin tables: not enough history yet. Post through Stanley for a couple more weeks and rerun the review.
 - A platform missing from every answer: its session likely expired. [Recipe 01](01-first-connection.md) covers checking and reconnecting.
 - Numbers lower than the platform's own dashboard: the two count different things, and posts published outside Stanley may not be covered. Trust trends within the table over absolute totals.
-- He can't answer a question: rephrase toward what the metrics store holds (engagement, impressions, reactions, followers, streaks). The full capability list and limits live in [recipe 00](00-what-stanley-can-do.md).
+- He can't answer a question: rephrase toward what the metrics store holds (engagement, impressions, reactions, followers, streaks). The full capability list and limits live in [recipe 09](09-what-stanley-can-do.md).
