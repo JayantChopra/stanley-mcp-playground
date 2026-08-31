@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "stanley": {
+      "type": "http",
+      "url": "https://xapi.getstanley.ai/mcp"
+    }
+  }
+}
