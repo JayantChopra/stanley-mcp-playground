@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="style.css">
 <noscript><style>[data-rv], .stagger > * { opacity: 1 !important; translate: 0 0 !important; } [data-progress] { --p: 1; }</style></noscript>
 </head>
-<body data-root="">
+<body>
 <header class="top shell">
   <a class="wordmark" href="index.html">stanley<span class="dot">·</span>mcp<span class="dot">·</span>playground</a>
   <nav>
@@ -50,10 +50,9 @@
     <span class="kicker">How it works</span>
     <h2 class="section" data-rv>One MCP tool, four moving parts</h2>
     <p class="note" data-rv style="--d:80ms">Claude reaches Stanley through one tool, <code>message_stanley</code>, and the conversation carries between calls. That's the whole trick, and it's why every prompt on this site pastes straight in.</p>
-    <div class="flow" data-progress="0.75" data-progress-span="1">
+    <div class="flow">
       <svg class="rail" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true">
-        <path class="track" d="M0 1 H100" pathLength="1"/>
-        <path class="ink" d="M0 1 H100" pathLength="1"/>
+        <path class="track" d="M0 1 H100"/>
       </svg>
       <div class="node" data-rv><span class="kicker">01</span><strong>You</strong><p>Raw material: what you shipped, learned, argued about this week.</p></div>
       <div class="node" data-rv style="--d:80ms"><span class="kicker">02</span><strong>Claude</strong><p>Orchestrates. Reads your repos and notes, drives your other tools.</p></div>
@@ -106,7 +105,7 @@
   </nav>
 </div>
 <div class="foot-mark" aria-hidden="true">stanley<span class="dot">·</span>mcp<span class="dot">·</span>playground</div>
-<div class="woods" aria-hidden="true"><canvas></canvas></div>
+<div class="circuit" aria-hidden="true"><canvas></canvas></div>
 </footer>
 <script src="app.js"></script>
 </body>

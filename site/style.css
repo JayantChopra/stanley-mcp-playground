@@ -181,17 +181,9 @@ p.note { color: var(--navy); max-width: 58ch; margin-top: 16px; font-size: 1.02r
 .flow .node strong { font-weight: 700; font-size: 1.08rem; letter-spacing: -0.02em; display: block; margin-bottom: 8px; }
 .flow .node p { font-size: 0.92rem; color: var(--navy); line-height: 1.55; }
 
-/* the landing page's signature: a rail through the pipeline that inks itself
-   exactly as far as the page has been scrolled, and un-inks on the way up.
-   Scroll-linked, so it never gets a transition. */
+/* a plain rail behind the pipeline; the nodes sit on it */
 .rail { position: absolute; left: 0; right: 0; top: 50%; height: 2px; width: 100%; z-index: 0; overflow: visible; }
-.rail path { fill: none; stroke-width: 2; vector-effect: non-scaling-stroke; }
-.rail .track { stroke: var(--grey-2); }
-.rail .ink {
-  stroke: var(--accent);
-  stroke-dasharray: 1;
-  stroke-dashoffset: calc(1 - var(--p, 1));
-}
+.rail path { fill: none; stroke: var(--grey-2); stroke-width: 2; vector-effect: non-scaling-stroke; }
 
 /* ---------- recipes grid ---------- */
 
@@ -222,31 +214,35 @@ p.note { color: var(--navy); max-width: 58ch; margin-top: 16px; font-size: 1.02r
 }
 .skill p { margin-top: 6px; font-size: 0.95rem; color: var(--navy); }
 
-/* ---------- footer: black band, giant wordmark ---------- */
+/* ---------- footer: white ground, accent wordmark, circuit band ---------- */
 
-footer { background: var(--black); color: var(--white); overflow-x: clip; }
+footer {
+  position: relative; background: var(--white); overflow: clip;
+  padding-bottom: clamp(140px, 18vh, 230px);
+}
 .foot {
-  padding-top: 80px; padding-bottom: 56px;
+  position: relative; z-index: 1;
+  padding-top: 80px; padding-bottom: 48px;
   display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
   font-size: 0.9rem; color: var(--grey-3);
 }
-.foot a { color: var(--white); text-decoration: none; font-weight: 600; padding: 10px 0; }
-.foot a:hover { color: var(--purple-light); }
+.foot a { color: var(--navy); text-decoration: none; font-weight: 600; padding: 10px 0; }
+.foot a:hover { color: var(--strike); }
 .foot nav { display: flex; gap: 22px; flex-wrap: wrap; }
 .foot-mark {
-  padding: 0 16px;
+  position: relative; z-index: 1; padding: 0 16px;
   font-weight: 800; font-size: 7.7vw; letter-spacing: -0.055em;
-  line-height: 1.1; color: var(--white); white-space: nowrap;
+  line-height: 1.1; color: var(--accent); white-space: nowrap;
 }
-.foot-mark .dot { color: var(--accent); }
+.foot-mark .dot { color: var(--deep); }
 
-/* the closing band: a real photograph, rendered as an ordered-dither
-   halftone. One pixel per cell, scaled up crisp. */
-.woods {
-  position: relative; margin-top: 56px;
-  height: clamp(180px, 28vh, 340px); background: var(--black);
+/* the closing band: circuitry rendered through the same ordered dither,
+   rising behind the wordmark the way the reference's treeline does. */
+.circuit {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 0;
+  height: clamp(240px, 26vh, 360px);
 }
-.woods canvas {
+.circuit canvas {
   position: absolute; inset: 0; width: 100%; height: 100%;
   image-rendering: pixelated;
 }

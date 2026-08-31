@@ -251,55 +251,184 @@ if (clone) {
   }).observe(host);
 })();
 
-// ---- the woods band: an ordered-dither halftone of a real photograph ----
-// One pixel per cell on a small canvas, scaled up with image-rendering:
-// pixelated.
+// ---- the circuit band: procedural wiring through the same dither ----
+// The reference band is a photograph with wind; ours is a drawn board:
+// traces rising like a treeline, pads and chips instead of spruces, in the
+// brand purples on white paper. Deterministic (seeded LCG, no Math.random),
+// so every load prints the same board. Animation is signal pulses climbing
+// the traces plus a slow Bayer phase drift, and it only runs on fine
+// pointers with motion allowed; everyone else gets one settled frame.
 (function () {
-  var cv = document.querySelector(".woods canvas");
-  if (!cv) return;
-  var img = new Image();
-  img.src = (document.body.getAttribute("data-root") || "") + "img/woods.jpg";
+  var host = document.querySelector(".circuit");
+  if (!host) return;
+  var cv = host.querySelector("canvas");
+  var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var animate = !reduce && matchMedia("(pointer: fine)").matches;
   var CELL = 3;
+  var LIGHT = [157, 150, 255], MID = [99, 85, 255], DEEP = [59, 43, 170];
 
-  function draw() {
-    var host = cv.parentElement;
-    var cols = Math.ceil(host.clientWidth / CELL);
-    var rows = Math.ceil(host.clientHeight / CELL);
+  var cols = 0, rows = 0, density = null, traces = [], out = null, ctx = null;
+
+  function lcg(seed) {
+    var s = seed >>> 0;
+    return function () {
+      s = (s * 1664525 + 1013904223) >>> 0;
+      return s / 4294967296;
+    };
+  }
+
+  function build() {
+    cols = Math.ceil(host.clientWidth / CELL);
+    rows = Math.ceil(host.clientHeight / CELL);
     if (!cols || !rows) return;
     var off = document.createElement("canvas");
     off.width = cols; off.height = rows;
     var ox = off.getContext("2d");
-    // cover-fit, framed so the treetops sit mid-band with sky above
-    var s = Math.max(cols / img.width, rows / img.height) * 1.1;
-    var w = img.width * s, h = img.height * s;
-    ox.drawImage(img, (cols - w) / 2, (rows - h) * 0.12, w, h);
-    var src = ox.getImageData(0, 0, cols, rows).data;
+    ox.fillStyle = "#fff";
+    ox.fillRect(0, 0, cols, rows);
+    var rnd = lcg(23);
+    var grey = function (t) { var v = Math.round(255 * (1 - t)); return "rgb(" + v + "," + v + "," + v + ")"; };
 
+    // chips along the board edge, pins on their top side
+    for (var x = 4 + Math.floor(rnd() * 8); x < cols - 20; x += 24 + Math.floor(rnd() * 18)) {
+      var cw = 10 + Math.floor(rnd() * 9);
+      var ch = 5 + Math.floor(rnd() * 4);
+      var cy = rows - ch - 1 - Math.floor(rnd() * 5);
+      ox.fillStyle = grey(0.85);
+      ox.fillRect(x, cy, cw, ch);
+      ox.fillStyle = grey(0.6);
+      for (var px = x + 1; px < x + cw - 1; px += 2) ox.fillRect(px, cy - 2, 1, 2);
+      ox.fillStyle = grey(0.1); // the pin-one notch
+      ox.fillRect(x + 1, cy + 1, 2, 2);
+    }
+
+    // traces rising to varied heights, some with one 45-degree jog
+    traces = [];
+    for (var tx = 3; tx < cols - 4; tx += 4 + Math.floor(rnd() * 6)) {
+      var topY = Math.floor(rows * (0.12 + rnd() * 0.62));
+      var jog = rnd() < 0.5 ? (rnd() < 0.5 ? -1 : 1) * (2 + Math.floor(rnd() * 5)) : 0;
+      var jogY = Math.floor(topY + (rows - topY) * (0.35 + rnd() * 0.35));
+      var pts = jog
+        ? [[tx, rows], [tx, jogY], [tx + jog, jogY - Math.abs(jog)], [tx + jog, topY]]
+        : [[tx, rows], [tx, topY]];
+      ox.strokeStyle = grey(0.55);
+      ox.lineWidth = 1;
+      ox.beginPath();
+      pts.forEach(function (p, i) { i ? ox.lineTo(p[0] + 0.5, p[1]) : ox.moveTo(p[0] + 0.5, p[1]); });
+      ox.stroke();
+      var tip = pts[pts.length - 1];
+      ox.fillStyle = grey(0.8);
+      if (rnd() < 0.7) {
+        ox.beginPath();
+        ox.arc(tip[0] + 0.5, tip[1], 1.7, 0, Math.PI * 2);
+        ox.fill();
+        ox.fillStyle = grey(0.15); // via hole
+        ox.fillRect(tip[0], tip[1] - 1, 1, 1);
+      } else {
+        ox.fillRect(tip[0] - 1, tip[1] - 2, 3, 3);
+      }
+      if (jog) {
+        ox.fillStyle = grey(0.75);
+        ox.fillRect(pts[1][0], pts[1][1] - 1, 1, 1);
+      }
+      var len = 0;
+      for (var s = 1; s < pts.length; s++) {
+        len += Math.hypot(pts[s][0] - pts[s - 1][0], pts[s][1] - pts[s - 1][1]);
+      }
+      traces.push({ pts: pts, len: len, phase: rnd() });
+    }
+
+    // two horizontal buses tying the board together
+    [0.88, 0.94].forEach(function (fy, i) {
+      var y = Math.floor(rows * fy);
+      ox.strokeStyle = grey(0.42);
+      ox.beginPath();
+      ox.moveTo(0, y + 0.5);
+      ox.lineTo(cols, y + 0.5);
+      ox.stroke();
+    });
+
+    var src = ox.getImageData(0, 0, cols, rows).data;
+    density = new Float32Array(cols * rows);
+    for (var i = 0; i < cols * rows; i++) {
+      density[i] = 1 - src[i * 4] / 255;
+    }
     cv.width = cols; cv.height = rows;
-    var ctx = cv.getContext("2d");
-    var out = ctx.createImageData(cols, rows);
+    ctx = cv.getContext("2d");
+    out = ctx.createImageData(cols, rows);
+  }
+
+  function frame(t) {
+    if (!density) return;
     var d = out.data;
-    var fadeRows = rows * 0.4; // trees climb out of the black instead of being cut flat
+    var drift = Math.floor(t / 280); // the grain breathes
+    var fade = rows * 0.42;
+
+    // pulses: a bright blip climbing each trace at constant speed
+    var dots = [];
+    traces.forEach(function (tr) {
+      var pos = ((t / 1000) * 22 + tr.phase * tr.len * 2.2) % (tr.len * 2.2);
+      if (pos > tr.len) return; // the gap between blips
+      var walked = tr.len - pos; // climb bottom to top
+      for (var s = 1; s < tr.pts.length; s++) {
+        var a = tr.pts[s - 1], b = tr.pts[s];
+        var seg = Math.hypot(b[0] - a[0], b[1] - a[1]);
+        if (walked <= seg) {
+          var k = walked / seg;
+          dots.push([Math.round(a[0] + (b[0] - a[0]) * k), Math.round(a[1] + (b[1] - a[1]) * k)]);
+          break;
+        }
+        walked -= seg;
+      }
+    });
+
     for (var y = 0; y < rows; y++) {
+      var env = y < fade ? Math.pow(y / fade, 1.8) : 1;
+      var mist = 0.12 * (y / rows);
       for (var x = 0; x < cols; x++) {
-        var i = (y * cols + x) * 4;
-        var lum = (src[i] * 0.2126 + src[i + 1] * 0.7152 + src[i + 2] * 0.0722) / 255;
-        var ink = (1 - lum) * 0.78; // dark trees print as ink; bright sky stays black
-        if (y < fadeRows) ink *= y / fadeRows;
-        if (ink > (BAYER[y % 8][x % 8] + 0.5) / 64) {
-          d[i] = 233; d[i + 1] = 231; d[i + 2] = 225; d[i + 3] = 255;
+        var idx = y * cols + x;
+        var ink = (density[idx] + mist) * env;
+        var o = idx * 4;
+        if (ink > (BAYER[y % 8][(x + drift) % 8] + 0.5) / 64) {
+          var c = ink > 0.7 ? DEEP : ink > 0.34 ? MID : LIGHT;
+          d[o] = c[0]; d[o + 1] = c[1]; d[o + 2] = c[2]; d[o + 3] = 255;
+        } else {
+          d[o + 3] = 0;
         }
       }
     }
+    dots.forEach(function (p) {
+      for (var dy = -1; dy <= 1; dy++) {
+        for (var dx = -1; dx <= 1; dx++) {
+          var xx = p[0] + dx, yy = p[1] + dy;
+          if (xx < 0 || yy < 0 || xx >= cols || yy >= rows) continue;
+          var o = (yy * cols + xx) * 4;
+          d[o] = DEEP[0]; d[o + 1] = DEEP[1]; d[o + 2] = DEEP[2]; d[o + 3] = 255;
+        }
+      }
+    });
     ctx.putImageData(out, 0, 0);
   }
 
-  img.onload = function () {
-    draw();
-    var t = 0;
-    addEventListener("resize", function () {
-      clearTimeout(t);
-      t = setTimeout(draw, 150);
-    }, { passive: true });
-  };
+  build();
+  frame(0);
+
+  var rt = 0;
+  addEventListener("resize", function () {
+    clearTimeout(rt);
+    rt = setTimeout(function () { build(); frame(0); }, 150);
+  }, { passive: true });
+
+  if (!animate) return;
+  var running = false, raf = 0, last = 0;
+  function tick(t) {
+    raf = 0;
+    if (!running) return;
+    if (t - last >= 40) { frame(t); last = t; }
+    raf = requestAnimationFrame(tick);
+  }
+  new IntersectionObserver(function (entries) {
+    running = entries[0].isIntersecting;
+    if (running && !raf) raf = requestAnimationFrame(tick);
+  }).observe(host);
 })();
