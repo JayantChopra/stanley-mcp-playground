@@ -11,10 +11,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
-<noscript><style>[data-rv], .stagger > * { opacity: 1 !important; translate: 0 0 !important; }</style></noscript>
 </head>
 <body>
-<header class="top">
+<header class="top shell">
   <a class="wordmark" href="../index.html">stanley<span class="dot">·</span>mcp<span class="dot">·</span>playground</a>
   <nav>
     <a href="../index.html#recipes">Recipes</a>
@@ -23,7 +22,7 @@
     <a class="gh" href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>
   </nav>
 </header>
-<div class="page">
+<div class="page shell">
   <aside class="toc">
     <span class="kicker">The cookbook</span>
     <ol>
@@ -39,9 +38,9 @@
     </ol>
   </aside>
   <article>
-<h1>07 · External media</h1>
-<p><strong>What you get:</strong> an asset made anywhere else (a Canva export, a generated image, a screen recording) staged into Stanley and attached to a scheduled draft.</p>
-<p><strong>Needs:</strong> Stanley connected with at least one platform linked, plus any outside tool that hands you a public HTTPS URL; run <code>/stanley-start</code> if you are not sure what you have.</p>
+<span class="kicker">Recipe 07</span>
+<h1>External media</h1>
+<div class="meta"><div><span class="kicker">What you get</span><p> an asset made anywhere else (a Canva export, a generated image, a screen recording) staged into Stanley and attached to a scheduled draft.</p></div><div><span class="kicker">Needs</span><p> Stanley connected with at least one platform linked, plus any outside tool that hands you a public HTTPS URL; run <code>/stanley-start</code> if you are not sure what you have.</p></div></div>
 <h2>The contract</h2>
 <p>Stanley stages any file behind a public HTTPS URL, within the size caps, and attaches it to your drafts. That&#39;s the whole deal. He fetches the file, stores it, and returns a permanent media key that outlives the original link. The caps you&#39;ll hit day to day: images up to 5 MB, video up to 50 MB and under 5 minutes, and an X draft takes 1 to 4 images or one video. The full table lives in <a href="00-what-stanley-can-do.html#hard-limits">recipe 00</a>.</p>
 <p>Because the contract is a URL, the tool on the other end doesn&#39;t matter. Canva and Recraft show up below as worked examples, not requirements; swap in whatever you use.</p>
@@ -102,7 +101,7 @@
   </nav>
   </article>
 </div>
-<footer><div class="foot">
+<footer><div class="foot shell">
   <span>Apache-2.0 · a cookbook for the <a href="https://getstanley.ai">Stanley</a> MCP</span>
   <nav>
     <a href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>

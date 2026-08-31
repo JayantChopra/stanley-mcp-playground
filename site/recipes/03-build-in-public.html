@@ -11,10 +11,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
-<noscript><style>[data-rv], .stagger > * { opacity: 1 !important; translate: 0 0 !important; }</style></noscript>
 </head>
 <body>
-<header class="top">
+<header class="top shell">
   <a class="wordmark" href="../index.html">stanley<span class="dot">·</span>mcp<span class="dot">·</span>playground</a>
   <nav>
     <a href="../index.html#recipes">Recipes</a>
@@ -23,7 +22,7 @@
     <a class="gh" href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>
   </nav>
 </header>
-<div class="page">
+<div class="page shell">
   <aside class="toc">
     <span class="kicker">The cookbook</span>
     <ol>
@@ -39,9 +38,9 @@
     </ol>
   </aside>
   <article>
-<h1>03 · Build in public</h1>
-<p><strong>What you get:</strong> your recent GitHub activity turned into story posts, drafted per platform and sitting in your calendar.</p>
-<p><strong>Needs:</strong> GitHub connected to Stanley, plus at least one platform to post to. Run <code>/stanley-start</code> if you are not sure what you have.</p>
+<span class="kicker">Recipe 03</span>
+<h1>Build in public</h1>
+<div class="meta"><div><span class="kicker">What you get</span><p> your recent GitHub activity turned into story posts, drafted per platform and sitting in your calendar.</p></div><div><span class="kicker">Needs</span><p> GitHub connected to Stanley, plus at least one platform to post to. Run <code>/stanley-start</code> if you are not sure what you have.</p></div></div>
 <h2>Why the diff matters</h2>
 <p>Posts about code live or die on one concrete detail. &quot;Shipped a big refactor&quot; says nothing, but &quot;deleted a 400-line hand-rolled parser and replaced it with 30 lines of grammar rules&quot; is a story someone might finish. Stanley can read the actual diff through your GitHub connection, so make him quote the real change instead of paraphrasing the PR title. Every prompt below leans on that.</p>
 <h2>The walkthrough</h2>
@@ -97,7 +96,7 @@
   </nav>
   </article>
 </div>
-<footer><div class="foot">
+<footer><div class="foot shell">
   <span>Apache-2.0 · a cookbook for the <a href="https://getstanley.ai">Stanley</a> MCP</span>
   <nav>
     <a href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>

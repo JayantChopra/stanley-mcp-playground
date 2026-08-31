@@ -11,10 +11,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
-<noscript><style>[data-rv], .stagger > * { opacity: 1 !important; translate: 0 0 !important; }</style></noscript>
 </head>
 <body>
-<header class="top">
+<header class="top shell">
   <a class="wordmark" href="../index.html">stanley<span class="dot">·</span>mcp<span class="dot">·</span>playground</a>
   <nav>
     <a href="../index.html#recipes">Recipes</a>
@@ -23,7 +22,7 @@
     <a class="gh" href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>
   </nav>
 </header>
-<div class="page">
+<div class="page shell">
   <aside class="toc">
     <span class="kicker">The cookbook</span>
     <ol>
@@ -39,9 +38,9 @@
     </ol>
   </aside>
   <article>
-<h1>08 · Rituals</h1>
-<p><strong>What you get:</strong> Stanley working unattended: a brief waiting when you wake up, a weekly analytics review, and fresh drafts whenever a scheduled scan finds something worth posting.</p>
-<p><strong>Needs:</strong> at least one platform connected, plus GitHub if you want the build-in-public scanner; run /stanley-start if you are not sure what you have.</p>
+<span class="kicker">Recipe 08</span>
+<h1>Rituals</h1>
+<div class="meta"><div><span class="kicker">What you get</span><p> Stanley working unattended: a brief waiting when you wake up, a weekly analytics review, and fresh drafts whenever a scheduled scan finds something worth posting.</p></div><div><span class="kicker">Needs</span><p> at least one platform connected, plus GitHub if you want the build-in-public scanner; run /stanley-start if you are not sure what you have.</p></div></div>
 <p>Rituals are recurring jobs that run on cron schedules in your local timezone. Stanley receives no inbound webhooks, so every ritual fires on a clock, never on an event. Hold onto that model and everything below follows from it.</p>
 <h2>The two kinds</h2>
 <p><strong>Built-in rituals</strong> come ready-made: a morning brief, a weekly analytics review, an evening recap, and a build-in-public scanner. Each one toggles active or inactive and takes a local wall-clock delivery time, no cron required. <a href="04-analytics-review.html">Recipe 04</a> covers what the analytics review digs into, and <a href="03-build-in-public.html">recipe 03</a> is the manual version of what the scanner automates.</p>
@@ -99,7 +98,7 @@
   </nav>
   </article>
 </div>
-<footer><div class="foot">
+<footer><div class="foot shell">
   <span>Apache-2.0 · a cookbook for the <a href="https://getstanley.ai">Stanley</a> MCP</span>
   <nav>
     <a href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>

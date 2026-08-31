@@ -11,10 +11,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
-<noscript><style>[data-rv], .stagger > * { opacity: 1 !important; translate: 0 0 !important; }</style></noscript>
 </head>
 <body>
-<header class="top">
+<header class="top shell">
   <a class="wordmark" href="../index.html">stanley<span class="dot">·</span>mcp<span class="dot">·</span>playground</a>
   <nav>
     <a href="../index.html#recipes">Recipes</a>
@@ -23,7 +22,7 @@
     <a class="gh" href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>
   </nav>
 </header>
-<div class="page">
+<div class="page shell">
   <aside class="toc">
     <span class="kicker">The cookbook</span>
     <ol>
@@ -39,9 +38,9 @@
     </ol>
   </aside>
   <article>
-<h1>04 · Analytics review</h1>
-<p><strong>What you get:</strong> a weekly read of your own numbers that ends as next week&#39;s plan, ready to hand to <a href="02-content-calendar.html">recipe 02</a>.</p>
-<p><strong>Needs:</strong> at least one platform publishing through Stanley, plus a few weeks of posting history on it; run /stanley-start if you are not sure what you have.</p>
+<span class="kicker">Recipe 04</span>
+<h1>Analytics review</h1>
+<div class="meta"><div><span class="kicker">What you get</span><p> a weekly read of your own numbers that ends as next week&#39;s plan, ready to hand to <a href="02-content-calendar.html">recipe 02</a>.</p></div><div><span class="kicker">Needs</span><p> at least one platform publishing through Stanley, plus a few weeks of posting history on it; run /stanley-start if you are not sure what you have.</p></div></div>
 <p>One warning up front: the numbers only mean something once Stanley has history to query. Say you started posting through him last week; the tables come back thin, and any pattern you spot is noise. Give it two or three weeks of steady posting first (<a href="02-content-calendar.html">recipe 02</a> gets you there).</p>
 <p>Under the hood it&#39;s SQL over your historical post metrics: engagement, impressions, reactions, follower trends, posting streaks. You ask in plain English; Stanley writes the query. He can also pull live follower counts and recent post stats when a question calls for them, so &quot;right now&quot; questions work alongside the historical ones.</p>
 <h2>The weekly review</h2>
@@ -114,7 +113,7 @@
   </nav>
   </article>
 </div>
-<footer><div class="foot">
+<footer><div class="foot shell">
   <span>Apache-2.0 · a cookbook for the <a href="https://getstanley.ai">Stanley</a> MCP</span>
   <nav>
     <a href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>

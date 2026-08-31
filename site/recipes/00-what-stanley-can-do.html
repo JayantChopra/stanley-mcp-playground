@@ -11,10 +11,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
-<noscript><style>[data-rv], .stagger > * { opacity: 1 !important; translate: 0 0 !important; }</style></noscript>
 </head>
 <body>
-<header class="top">
+<header class="top shell">
   <a class="wordmark" href="../index.html">stanley<span class="dot">·</span>mcp<span class="dot">·</span>playground</a>
   <nav>
     <a href="../index.html#recipes">Recipes</a>
@@ -23,7 +22,7 @@
     <a class="gh" href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>
   </nav>
 </header>
-<div class="page">
+<div class="page shell">
   <aside class="toc">
     <span class="kicker">The cookbook</span>
     <ol>
@@ -39,7 +38,8 @@
     </ol>
   </aside>
   <article>
-<h1>00 · What Stanley can do</h1>
+<span class="kicker">Recipe 00</span>
+<h1>What Stanley can do</h1>
 <p>Reference sheet for the whole cookbook. Recipes link back here instead of re-explaining capabilities. What&#39;s available to you depends on what you&#39;ve connected, and <a href="01-first-connection.html">recipe 01</a> shows you how to check.</p>
 <h2>The one tool</h2>
 <p>On Claude&#39;s side, Stanley is a single MCP tool called <code>message_stanley</code>. You or Claude send him a message, he replies, and the conversation carries across calls. There is no separate tool per feature, so the recipes in this cookbook are conversation patterns rather than API call sequences. Stanley runs his own tools internally (calendar, media staging, analytics queries), and naming what you want in plain English is enough.</p>
@@ -96,7 +96,7 @@
   </nav>
   </article>
 </div>
-<footer><div class="foot">
+<footer><div class="foot shell">
   <span>Apache-2.0 · a cookbook for the <a href="https://getstanley.ai">Stanley</a> MCP</span>
   <nav>
     <a href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>

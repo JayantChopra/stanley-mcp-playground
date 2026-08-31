@@ -18,6 +18,11 @@
   --grey-3: #808eb6;
   --sans: "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, monospace; /* code literals only */
+  --px: 24px;   /* shell gutter */
+  --band: 72px; /* section rhythm */
+}
+@media (min-width: 768px) {
+  :root { --px: 40px; --band: 112px; }
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -40,56 +45,58 @@ a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset:
 a:hover { color: var(--strike); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
 
+.shell { max-width: 80rem; margin: 0 auto; padding-left: var(--px); padding-right: var(--px); }
+
 /* the eyebrow label, straight from the spec */
 .kicker {
   display: block;
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   color: var(--grey-3);
-  margin-bottom: 10px;
 }
 
 /* ---------- header ---------- */
 
-.top {
-  display: flex; align-items: center; justify-content: space-between;
-  max-width: 80rem; margin: 0 auto; padding: 20px 24px;
-}
+.top { display: flex; align-items: center; justify-content: space-between; padding-top: 22px; padding-bottom: 22px; }
 .wordmark {
-  font-weight: 800; font-size: 1.05rem; letter-spacing: -0.04em;
+  font-weight: 800; font-size: 1.08rem; letter-spacing: -0.04em;
   color: var(--black); text-decoration: none;
 }
 .wordmark .dot { color: var(--accent); }
-.top nav { display: flex; gap: 8px; align-items: center; }
+.top nav { display: flex; gap: 6px; align-items: center; }
 .top nav a {
   color: var(--black); text-decoration: none; font-size: 0.95rem; font-weight: 600;
-  padding: 10px 12px; border-radius: 6px; min-height: 44px;
+  padding: 10px 14px; border-radius: 999px; min-height: 44px;
   display: inline-flex; align-items: center;
 }
-.top nav a:hover { color: var(--accent); }
-.top .gh { background: var(--accent); color: var(--white); padding: 10px 20px; }
+.top nav a:hover { color: var(--strike); background: var(--tint); }
+.top .gh { background: var(--accent); color: var(--white); padding: 10px 22px; margin-left: 6px; }
 .top .gh:hover { background: var(--strike); color: var(--white); }
 
 /* ---------- hero ---------- */
 
 .hero {
-  max-width: 80rem; margin: 0 auto; padding: 64px 24px 80px;
-  display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: 56px; align-items: center;
+  padding-top: 56px; padding-bottom: 64px;
+  display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: 72px; align-items: center;
 }
+.hero .kicker { margin-bottom: 18px; }
 .hero h1 {
-  font-weight: 800; font-size: clamp(2.5rem, 6.5vw, 4.6rem);
-  line-height: 0.92; letter-spacing: -0.05em; margin-bottom: 24px;
+  font-weight: 800; font-size: clamp(2.7rem, 6.6vw, 5.1rem);
+  line-height: 0.9; letter-spacing: -0.05em; margin-bottom: 26px;
 }
 .hero h1 em { font-style: normal; color: var(--accent); }
-.hero .lede { color: var(--grey-3); font-size: 1.08rem; max-width: 44ch; margin-bottom: 28px; }
+.hero .lede {
+  color: var(--navy); font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  line-height: 1.6; max-width: 46ch; margin-bottom: 32px;
+}
 .cta-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 
 .btn {
   display: inline-flex; align-items: center; font-weight: 600; text-decoration: none;
-  border-radius: 6px; padding: 0 20px; min-height: 44px; font-size: 0.98rem;
+  border-radius: 999px; padding: 0 24px; min-height: 48px; font-size: 1rem;
 }
 .btn-primary { background: var(--accent); color: var(--white); }
 .btn-primary:hover { background: var(--strike); color: var(--white); }
@@ -97,100 +104,123 @@ a:hover { color: var(--strike); }
 .btn-ghost:hover { background: var(--tint); color: var(--black); }
 
 .clone {
-  position: relative; margin-top: 24px;
-  background: var(--tint); border-radius: 6px;
-  padding: 12px 74px 12px 16px; font-family: var(--mono); font-size: 0.84rem;
-  color: var(--navy); max-width: 520px; overflow-x: auto;
+  display: flex; align-items: center; gap: 12px;
+  margin-top: 28px; background: var(--tint); border-radius: 999px;
+  padding: 8px 8px 8px 20px; max-width: 560px;
 }
-.clone code { white-space: nowrap; }
-.clone .copy-btn { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); }
-
+.clone code {
+  font-family: var(--mono); font-size: 0.82rem; color: var(--deep);
+  flex: 1 1 auto; min-width: 0;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
 .copy-btn {
-  border: 0; background: var(--white); border-radius: 6px;
-  font-family: var(--sans); font-size: 0.78rem; font-weight: 600;
-  padding: 6px 12px; cursor: pointer; color: var(--grey-3); flex-shrink: 0;
+  border: 0; background: var(--white); border-radius: 999px;
+  font-family: var(--sans); font-size: 0.8rem; font-weight: 600;
+  padding: 8px 16px; cursor: pointer; color: var(--navy); flex-shrink: 0;
 }
 .copy-btn:hover { color: var(--strike); }
 @media (pointer: coarse) {
-  .copy-btn { min-height: 44px; min-width: 44px; }
+  .copy-btn { min-height: 44px; }
 }
 
 /* the conversation card: recipes are conversations. Navy panel, no border. */
-.convo {
-  background: var(--navy); border-radius: 16px; padding: 24px;
-  font-size: 0.92rem;
+.convo { background: var(--navy); border-radius: 20px; padding: 28px; font-size: 0.94rem; }
+.convo .tag {
+  display: block; font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.06em; color: var(--purple-light);
+  margin-bottom: 18px;
 }
-.convo .bar { display: flex; gap: 6px; margin-bottom: 16px; }
-.convo .bar span { width: 10px; height: 10px; border-radius: 50%; background: var(--deep); }
-.convo .bar span:first-child { background: var(--purple-light); }
-.msg { border-radius: 12px; padding: 12px 16px; margin-top: 12px; max-width: 92%; }
+.msg { border-radius: 14px; padding: 14px 18px; margin-top: 14px; max-width: 88%; line-height: 1.55; }
 .msg .who {
   display: block; margin-bottom: 6px;
-  font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+  font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;
 }
-.msg-you { background: var(--deep); color: var(--white); margin-left: auto; }
-.msg-you .who { color: var(--purple-light); }
-.msg-stanley { background: var(--white); color: var(--navy); }
+.msg-you { background: var(--accent); color: var(--white); margin-left: auto; border-bottom-right-radius: 4px; }
+.msg-you .who { color: var(--tint); }
+.msg-stanley { background: var(--white); color: var(--navy); border-bottom-left-radius: 4px; }
 .msg-stanley .who { color: var(--accent); }
 .msg ul { list-style: none; }
+.msg li { margin-top: 4px; }
 .msg li::before { content: "· "; color: var(--accent); font-weight: 700; }
 .msg li.warn { color: var(--grey-3); }
-.convo .caption { color: var(--grey-3); font-size: 0.78rem; margin-top: 16px; }
-.convo .caption a { color: var(--purple-light); }
+.convo .caption { margin-top: 20px; font-size: 0.88rem; }
+.convo .caption a { color: var(--purple-light); text-decoration: none; font-weight: 600; }
+.convo .caption a:hover { color: var(--white); }
+
+/* hero load-in: the landing page's one signature motion.
+   Pure CSS with backwards fill, so it fails open with no JS. */
+[data-in] { animation: rise 640ms cubic-bezier(0.22, 1, 0.36, 1) backwards; animation-delay: var(--d, 0ms); }
+@keyframes rise { from { opacity: 0; translate: 0 14px; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  [data-in] { animation: none; }
+}
+
+/* ---------- stats ---------- */
+
+.stats { padding-bottom: var(--band); display: flex; gap: clamp(40px, 7vw, 96px); flex-wrap: wrap; }
+.stat .n {
+  display: block; font-weight: 800; font-variant-numeric: tabular-nums;
+  font-size: clamp(3.2rem, 6vw, 5.5rem); line-height: 0.9; letter-spacing: -0.05em;
+}
+.stat .l { margin-top: 10px; }
+
+/* ---------- shared section furniture ---------- */
+
+h2.section {
+  font-weight: 700; font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+  line-height: 1.05; letter-spacing: -0.04em; margin-top: 14px;
+}
+p.note { color: var(--navy); max-width: 58ch; margin-top: 16px; font-size: 1.02rem; }
 
 /* ---------- how it works ---------- */
 
 .how { background: var(--grey-1); }
-.how-inner { max-width: 80rem; margin: 0 auto; padding: 64px 24px; }
-h2.section {
-  font-weight: 700; font-size: clamp(1.5rem, 2.6vw, 2.1rem);
-  line-height: 1.05; letter-spacing: -0.04em; margin-bottom: 12px;
+.how-inner { padding-top: var(--band); padding-bottom: var(--band); }
+.flow { display: flex; align-items: stretch; margin-top: 44px; }
+.flow .node { flex: 1 1 180px; background: var(--white); border-radius: 12px; padding: 24px; }
+.flow .node .kicker { color: var(--accent); margin-bottom: 10px; }
+.flow .node strong { font-weight: 700; font-size: 1.08rem; letter-spacing: -0.02em; display: block; margin-bottom: 8px; }
+.flow .node p { font-size: 0.92rem; color: var(--navy); line-height: 1.55; }
+.flow .arrow {
+  align-self: center; padding: 0 10px; color: var(--accent);
+  font-size: 1.4rem; font-weight: 700; flex-shrink: 0;
 }
-.how p.note, .recipes p.note { color: var(--grey-3); max-width: 62ch; margin-bottom: 36px; }
-.flow { display: flex; align-items: stretch; flex-wrap: wrap; }
-.flow .node {
-  flex: 1 1 180px; background: var(--white); border-radius: 10px; padding: 20px;
-}
-.flow .node strong { font-weight: 700; letter-spacing: -0.02em; display: block; margin-bottom: 6px; }
-.flow .node p { font-size: 0.88rem; color: var(--grey-3); }
-.flow .arrow { align-self: center; padding: 0 12px; color: var(--accent); font-size: 1.3rem; }
 
 /* ---------- recipes grid ---------- */
 
-.recipes { max-width: 80rem; margin: 0 auto; padding: 80px 24px; }
-.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 36px; }
+.recipes { padding-top: var(--band); padding-bottom: var(--band); }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 44px; }
 .card {
-  background: var(--tint); border-radius: 10px; padding: 22px;
-  text-decoration: none; color: var(--black); display: block;
+  background: var(--tint); border-radius: 12px; padding: 26px;
+  text-decoration: none; color: var(--black); display: flex; flex-direction: column; gap: 8px;
 }
 .card:hover { background: var(--grey-1); color: var(--black); }
 .card .num {
-  display: block; margin-bottom: 12px;
   font-size: 11px; font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.05em; color: var(--accent);
+  letter-spacing: 0.06em; color: var(--accent); margin-bottom: 6px;
 }
-.card h3 { font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; margin-bottom: 6px; }
+.card h3 { font-weight: 700; font-size: 1.18rem; letter-spacing: -0.02em; line-height: 1.2; }
 .card:hover h3 { color: var(--strike); }
-.card p { font-size: 0.9rem; color: var(--grey-3); }
+.card p { font-size: 0.92rem; color: var(--grey-3); line-height: 1.5; }
 
-/* ---------- skills strip ---------- */
+/* ---------- skills ---------- */
 
 .skills { background: var(--grey-1); }
-.skills-inner { max-width: 80rem; margin: 0 auto; padding: 64px 24px; }
-.skills p.note { color: var(--grey-3); max-width: 62ch; margin-bottom: 30px; }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip {
-  font-size: 0.88rem; background: var(--white); border-radius: 999px;
-  padding: 10px 18px; color: var(--navy); min-height: 44px;
-  display: inline-flex; align-items: center;
+.skills-inner { padding-top: var(--band); padding-bottom: var(--band); }
+.skill-rows { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 44px; }
+.skill { background: var(--white); border-radius: 12px; padding: 22px 24px; }
+.skill code {
+  font-family: var(--mono); font-size: 0.95rem; font-weight: 500;
+  color: var(--accent); background: none; padding: 0;
 }
-.chip b { color: var(--accent); font-weight: 700; }
+.skill p { margin-top: 6px; font-size: 0.95rem; color: var(--navy); }
 
 /* ---------- footer: black band, giant wordmark ---------- */
 
-footer { background: var(--black); color: var(--white); }
+footer { background: var(--black); color: var(--white); overflow-x: clip; }
 .foot {
-  max-width: 80rem; margin: 0 auto; padding: 48px 24px 20px;
+  padding-top: 56px; padding-bottom: 32px;
   display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
   font-size: 0.9rem; color: var(--grey-3);
 }
@@ -198,121 +228,112 @@ footer { background: var(--black); color: var(--white); }
 .foot a:hover { color: var(--purple-light); }
 .foot nav { display: flex; gap: 22px; flex-wrap: wrap; }
 .foot-mark {
-  padding: 0 16px 24px;
-  font-weight: 800; font-size: 8.1vw; letter-spacing: -0.075em;
-  line-height: 0.76; color: var(--white); white-space: nowrap; overflow: hidden;
+  padding: 0 16px 28px;
+  font-weight: 800; font-size: 8vw; letter-spacing: -0.075em;
+  line-height: 1; color: var(--white); white-space: nowrap;
 }
 .foot-mark .dot { color: var(--accent); }
 
 /* ---------- recipe pages (navy text, per the system's application surfaces) ---------- */
 
 .page {
-  max-width: 80rem; margin: 0 auto; padding: 24px 24px 96px;
-  display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 48px;
+  padding-top: 32px; padding-bottom: 96px;
+  display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 64px;
 }
-.toc { position: sticky; top: 24px; align-self: start; font-size: 0.9rem; }
+.toc { position: sticky; top: 28px; align-self: start; font-size: 0.9rem; }
+.toc .kicker { margin-bottom: 14px; padding-left: 10px; }
 .toc ol { list-style: none; }
 .toc a {
   display: flex; gap: 10px; color: var(--grey-3); text-decoration: none;
-  padding: 7px 10px; border-radius: 6px; font-weight: 500;
+  padding: 7px 10px; border-radius: 8px; font-weight: 500; line-height: 1.4;
 }
-.toc a .n { font-size: 0.78rem; font-weight: 600; color: var(--accent); }
+.toc a .n { font-size: 0.78rem; font-weight: 600; color: var(--accent); flex-shrink: 0; padding-top: 2px; }
 .toc a:hover { background: var(--grey-1); color: var(--navy); }
 .toc a.here { background: var(--tint); color: var(--navy); font-weight: 700; }
 
-article { max-width: 680px; min-width: 0; color: var(--navy); }
+article { max-width: 700px; min-width: 0; color: var(--navy); }
+article .kicker { color: var(--accent); margin-bottom: 12px; }
 article h1 {
-  font-weight: 800; font-size: clamp(1.9rem, 3.4vw, 2.6rem);
-  letter-spacing: -0.05em; line-height: 1.02; margin-bottom: 20px; color: var(--black);
+  font-weight: 800; font-size: clamp(2rem, 3.6vw, 2.9rem);
+  letter-spacing: -0.05em; line-height: 1; margin-bottom: 24px; color: var(--black);
 }
 article h2 {
-  font-weight: 700; font-size: 1.35rem; letter-spacing: -0.04em;
-  line-height: 1.05; margin: 40px 0 12px; color: var(--black);
+  font-weight: 700; font-size: 1.4rem; letter-spacing: -0.04em;
+  line-height: 1.05; margin: 48px 0 4px; color: var(--black);
 }
-article p, article ul, article ol { margin-top: 12px; }
+article p, article ul, article ol { margin-top: 14px; }
 article ul, article ol { padding-left: 24px; }
-article li { margin-top: 6px; }
+article li { margin-top: 8px; }
 article code {
   font-family: var(--mono); font-size: 0.85em;
   background: var(--tint); border-radius: 4px; padding: 1px 5px; color: var(--deep);
 }
 article pre {
-  background: var(--navy); color: var(--white); border-radius: 10px;
-  padding: 16px 18px; overflow-x: auto; margin-top: 14px; font-size: 0.85rem;
+  background: var(--navy); color: var(--white); border-radius: 12px;
+  padding: 18px 20px; overflow-x: auto; margin-top: 16px; font-size: 0.85rem;
 }
 article pre code { background: none; padding: 0; color: inherit; }
 
+/* the recipe's lead facts, pulled into one tint panel by the builder */
+.meta {
+  background: var(--tint); border-radius: 12px; padding: 22px 24px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 8px;
+}
+.meta p { margin-top: 6px; font-size: 0.95rem; line-height: 1.55; }
+
 /* tables: tint separation, no cell borders */
 article table {
-  border-collapse: collapse; width: 100%; margin-top: 14px; font-size: 0.92rem;
-  display: block; overflow-x: auto;
+  border-collapse: collapse; width: 100%; margin-top: 16px; font-size: 0.92rem;
+  display: block; overflow-x: auto; border-radius: 10px;
 }
-article th, article td { padding: 9px 14px; text-align: left; }
+article th, article td { padding: 10px 16px; text-align: left; }
 article thead tr { background: var(--tint); }
-article th { font-weight: 700; }
+article th { font-weight: 700; color: var(--black); }
 article tbody tr:nth-child(even) { background: var(--grey-1); }
 
 /* prompts: paste-able blockquotes as tint panels, label above, no border */
 article blockquote {
-  position: relative; background: var(--tint); border-radius: 10px;
-  padding: 34px 96px 14px 18px; margin-top: 14px;
-  font-size: 0.95rem; color: var(--navy);
+  position: relative; background: var(--tint); border-radius: 12px;
+  padding: 40px 20px 16px; margin-top: 14px;
+  font-size: 0.96rem; color: var(--navy); line-height: 1.6;
 }
 article blockquote p { margin: 0; }
-article blockquote .copy-btn { position: absolute; top: 26px; right: 10px; }
+article blockquote .copy-btn { position: absolute; top: 10px; right: 10px; }
 article blockquote::before {
-  content: "Paste this"; position: absolute; top: 12px; left: 18px;
-  font-size: 10px; font-weight: 600; letter-spacing: 0.05em;
-  text-transform: uppercase; color: var(--grey-3);
+  content: "Paste this"; position: absolute; top: 14px; left: 20px;
+  font-size: 10px; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--accent);
 }
 
-.pager { display: flex; justify-content: space-between; gap: 12px; margin-top: 56px; font-size: 0.92rem; }
+.pager { display: flex; justify-content: space-between; gap: 12px; margin-top: 64px; font-size: 0.92rem; }
 .pager a {
-  text-decoration: none; background: var(--tint); border-radius: 6px;
-  padding: 12px 18px; color: var(--navy); font-weight: 600; min-height: 44px;
+  text-decoration: none; background: var(--tint); border-radius: 999px;
+  padding: 12px 22px; color: var(--navy); font-weight: 600; min-height: 44px;
   display: inline-flex; align-items: center;
 }
 .pager a:hover { background: var(--grey-1); color: var(--strike); }
 
-/* ---------- signature motion (landing only): staggered fade-rise ---------- */
-
-[data-rv] { opacity: 0; translate: 0 14px; }
-[data-rv].in {
-  opacity: 1; translate: 0 0;
-  transition: opacity 600ms cubic-bezier(0.22, 1, 0.36, 1), translate 600ms cubic-bezier(0.22, 1, 0.36, 1);
-  transition-delay: var(--d, 0ms);
-}
-.stagger.in > * {
-  opacity: 0; translate: 0 14px;
-  animation: rv-in 600ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: calc(var(--i, 0) * 70ms);
-}
-@keyframes rv-in { to { opacity: 1; translate: 0 0; } }
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  [data-rv], .stagger.in > * { opacity: 1; translate: 0 0; animation: none; transition: none; }
-}
-
 /* ---------- responsive ---------- */
 
 @media (max-width: 900px) {
-  .hero { grid-template-columns: minmax(0, 1fr); padding-top: 32px; gap: 36px; }
+  .hero { grid-template-columns: minmax(0, 1fr); padding-top: 32px; gap: 44px; }
   .grid { grid-template-columns: 1fr 1fr; }
-  .page { grid-template-columns: 1fr; }
+  .skill-rows { grid-template-columns: 1fr; }
+  .page { grid-template-columns: 1fr; gap: 40px; }
   .toc { position: static; }
-  .flow .arrow { rotate: 90deg; flex-basis: 100%; text-align: center; padding: 2px 0; }
+  .flow { flex-direction: column; }
+  .flow .arrow { rotate: 90deg; align-self: flex-start; padding: 4px 0 4px 24px; }
 }
 @media (max-width: 767px) {
   /* the nav row goes away below md, as the system's header does */
   .top nav a:not(.gh) { display: none; }
 }
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+  .meta { grid-template-columns: 1fr; gap: 14px; }
+  .stats { gap: 32px; }
+}
 @media (max-width: 379px) {
   /* below 380 the header pill hides too; GitHub stays reachable in the footer */
   .top .gh { display: none; }
-}
-@media (max-width: 560px) {
-  .grid { grid-template-columns: 1fr; }
-  article blockquote { padding-right: 18px; }
-  article blockquote .copy-btn { position: static; display: inline-block; margin-top: 8px; }
 }

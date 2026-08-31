@@ -11,10 +11,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<noscript><style>[data-rv], .stagger > * { opacity: 1 !important; translate: 0 0 !important; }</style></noscript>
 </head>
 <body>
-<header class="top">
+<header class="top shell">
   <a class="wordmark" href="index.html">stanley<span class="dot">·</span>mcp<span class="dot">·</span>playground</a>
   <nav>
     <a href="index.html#recipes">Recipes</a>
@@ -24,52 +23,59 @@
   </nav>
 </header>
 <main>
-<section class="hero">
+<section class="hero shell">
   <div>
-    <h1 data-rv>Recipes for driving <em>Stanley</em> from Claude.</h1>
-    <p class="lede" data-rv style="--d:80ms">A cookbook for the Stanley MCP. Plan a week of posts in one sitting, turn merged PRs into build-in-public threads, read your own numbers, and put the whole thing on a schedule, from a conversation.</p>
-    <div class="cta-row" data-rv style="--d:160ms">
+    <span class="kicker" data-in>The Stanley MCP cookbook</span>
+    <h1 data-in style="--d:60ms">Recipes for driving <em>Stanley</em> from Claude.</h1>
+    <p class="lede" data-in style="--d:140ms">Plan a week of posts in one sitting, turn merged PRs into build-in-public threads, read your own numbers, and put the whole thing on a schedule, from a conversation.</p>
+    <div class="cta-row" data-in style="--d:220ms">
       <a class="btn btn-primary" href="recipes/01-first-connection.html">Start with recipe 01</a>
       <a class="btn btn-ghost" href="#recipes">Browse all nine</a>
     </div>
-    <div class="clone" data-rv style="--d:240ms"><code>git clone https://github.com/JayantChopra/stanley-mcp-playground.git &amp;&amp; cd stanley-mcp-playground &amp;&amp; claude</code></div>
+    <div class="clone" data-in style="--d:300ms" data-cmd="git clone https://github.com/JayantChopra/stanley-mcp-playground.git && cd stanley-mcp-playground && claude"><code>git clone https://github.com/JayantChopra/stanley-mcp-playground.git && cd stanley-mcp-playground && claude</code></div>
   </div>
-  <div class="convo" data-rv style="--d:200ms" role="img" aria-label="A conversation: you ask Stanley what is connected, Stanley replies with platforms, a broken session, and posting slots.">
-    <div class="bar"><span></span><span></span><span></span></div>
+  <div class="convo" data-in style="--d:200ms">
+    <span class="tag">The audit · every setup starts here</span>
     <div class="msg msg-you"><span class="who">You</span>List every platform and integration connected for this account, flag anything expired or broken, and show my posting slots.</div>
     <div class="msg msg-stanley"><span class="who">Stanley</span>
       <ul>
         <li>x · linkedin · github · notion</li>
-        <li class="warn">instagram: session expired, reconnect on the integrations page</li>
+        <li class="warn">instagram: session expired, reconnect to fix</li>
         <li>slots: 8:00 am · 12:00 pm</li>
       </ul>
     </div>
-    <p class="caption">The audit from <a href="recipes/01-first-connection.html">recipe 01</a>, where every setup starts</p>
+    <p class="caption"><a href="recipes/01-first-connection.html">Run it yourself in recipe 01 →</a></p>
   </div>
 </section>
 
+<section class="stats shell">
+  <div class="stat"><span class="n">9</span><span class="l kicker">Recipes, in learning order</span></div>
+  <div class="stat"><span class="n">5</span><span class="l kicker">Drop-in slash commands</span></div>
+  <div class="stat"><span class="n">1</span><span class="l kicker">MCP tool driving it all</span></div>
+</section>
+
 <section class="how">
-  <div class="how-inner">
+  <div class="how-inner shell">
     <span class="kicker">How it works</span>
-    <h2 class="section" data-rv>One MCP tool, four moving parts</h2>
-    <p class="note" data-rv style="--d:80ms">Claude reaches Stanley through a single tool, <code>message_stanley</code>. Recipes are conversation patterns, which is why everything on this site can be pasted straight in.</p>
-    <div class="flow stagger" data-rv>
-      <div class="node"><strong>You</strong><p>Raw material: what you shipped, learned, argued about this week.</p></div>
+    <h2 class="section">One MCP tool, four moving parts</h2>
+    <p class="note">Claude reaches Stanley through a single tool, <code>message_stanley</code>. Recipes are conversation patterns, which is why everything on this site can be pasted straight in.</p>
+    <div class="flow">
+      <div class="node"><span class="kicker">01</span><strong>You</strong><p>Raw material: what you shipped, learned, argued about this week.</p></div>
       <div class="arrow" aria-hidden="true">→</div>
-      <div class="node"><strong>Claude</strong><p>Orchestrates. Reads your repos and notes, drives your other tools.</p></div>
+      <div class="node"><span class="kicker">02</span><strong>Claude</strong><p>Orchestrates. Reads your repos and notes, drives your other tools.</p></div>
       <div class="arrow" aria-hidden="true">→</div>
-      <div class="node"><strong>Stanley</strong><p>Your voice, calendar, media, and analytics behind one MCP endpoint.</p></div>
+      <div class="node"><span class="kicker">03</span><strong>Stanley</strong><p>Your voice, calendar, media, and analytics behind one endpoint.</p></div>
       <div class="arrow" aria-hidden="true">→</div>
-      <div class="node"><strong>Your platforms</strong><p>X, LinkedIn, Threads. Instagram drafts wait for your hand, by design.</p></div>
+      <div class="node"><span class="kicker">04</span><strong>Your platforms</strong><p>X, LinkedIn, Threads. Instagram drafts wait for your hand, by design.</p></div>
     </div>
   </div>
 </section>
 
-<section class="recipes" id="recipes">
+<section class="recipes shell" id="recipes">
   <span class="kicker">The cookbook</span>
-  <h2 class="section" data-rv>Nine recipes, in learning order</h2>
-  <p class="note" data-rv style="--d:80ms">Numbered because order matters: 00 is the reference sheet, 01 gets you connected, and everything after is a bigger version of the same loop.</p>
-  <div class="grid stagger" data-rv>
+  <h2 class="section">Nine recipes, in learning order</h2>
+  <p class="note">Numbered because order matters: 00 is the reference sheet, 01 gets you connected, and everything after is a bigger version of the same loop.</p>
+  <div class="grid">
     <a class="card" href="recipes/00-what-stanley-can-do.html"><span class="num">Recipe 00</span><h3>What Stanley can do</h3><p>The capability reference every other recipe leans on.</p></a>
     <a class="card" href="recipes/01-first-connection.html"><span class="num">Recipe 01</span><h3>Connect and run your first loop</h3><p>MCP setup, connection audit, draft then schedule.</p></a>
     <a class="card" href="recipes/02-content-calendar.html"><span class="num">Recipe 02</span><h3>Plan a week in one sitting</h3><p>Fill your calendar slots from one working session.</p></a>
@@ -83,21 +89,21 @@
 </section>
 
 <section class="skills" id="skills">
-  <div class="skills-inner">
+  <div class="skills-inner shell">
     <span class="kicker">Drop-in skills</span>
-    <h2 class="section" data-rv>Slash commands included</h2>
-    <p class="note" data-rv style="--d:80ms">Open the repo in Claude Code and these work immediately, no copying. <code>/stanley-start</code> audits what you have connected and names the recipes your setup can run.</p>
-    <div class="chips stagger" data-rv>
-    <span class="chip"><b>/stanley-start</b>&nbsp;· audits connections, names your next recipes</span>
-    <span class="chip"><b>/stanley-week-plan</b>&nbsp;· plans and schedules a week</span>
-    <span class="chip"><b>/build-in-public</b>&nbsp;· turns PRs into posts</span>
-    <span class="chip"><b>/stanley-review</b>&nbsp;· runs the weekly numbers</span>
-    <span class="chip"><b>/repurpose</b>&nbsp;· one post, every platform</span>
+    <h2 class="section">Slash commands included</h2>
+    <p class="note">Open the repo in Claude Code and these work immediately, no copying. Every one carries the same hard rule: nothing publishes live without your say-so.</p>
+    <div class="skill-rows">
+    <div class="skill"><code>/stanley-start</code><p>Audits your connections and names the recipes your setup can run.</p></div>
+    <div class="skill"><code>/stanley-week-plan</code><p>Plans and bulk-schedules a week of posts, interactively.</p></div>
+    <div class="skill"><code>/build-in-public</code><p>Scans your GitHub activity and drafts posts from what you pick.</p></div>
+    <div class="skill"><code>/stanley-review</code><p>Runs the weekly analytics review as a short digest.</p></div>
+    <div class="skill"><code>/repurpose</code><p>Converts one post into drafts for every platform you name.</p></div>
     </div>
   </div>
 </section>
 </main>
-<footer><div class="foot">
+<footer><div class="foot shell">
   <span>Apache-2.0 · a cookbook for the <a href="https://getstanley.ai">Stanley</a> MCP</span>
   <nav>
     <a href="https://github.com/JayantChopra/stanley-mcp-playground">GitHub</a>
