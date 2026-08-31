@@ -6,11 +6,11 @@ When someone seems new here (they ask where to start, what this repo is, or what
 
 Routing map, also used by stanley-start:
 
-- X or LinkedIn connected: recipes 02 (calendar) and 06 (repurposing)
-- GitHub connected: recipe 03 (build in public)
-- a few weeks of posting history: recipe 04 (analytics)
-- design or image tools reachable from Claude (Canva, Recraft, anything that exports a URL): recipe 07
-- comfortable with the above: recipe 08 (rituals)
+- X or LinkedIn connected: recipe 02 (recipes/02-content-calendar.md) and recipe 06 (recipes/06-repurposing.md)
+- GitHub connected: recipe 03 (recipes/03-build-in-public.md)
+- a few weeks of posting history: recipe 04 (recipes/04-analytics-review.md). If history is unknown, ask Stanley how many posts he's tracked in the last 30 days before recommending it.
+- the user wants media in their posts (any tool that exports a URL works): recipe 07 (recipes/07-external-media.md)
+- comfortable with the above: recipe 08 (recipes/08-rituals.md)
 - nothing connected: send them to getstanley.ai onboarding before any recipe
 
 Ground rules for working in this repo:
