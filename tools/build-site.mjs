@@ -177,6 +177,31 @@ ${TOPBAR("")}
   </div>
 </section>
 
+<section class="setup shell" id="setup">
+  <span class="kicker">The first five minutes</span>
+  <h2 class="section" data-rv>What setup looks like</h2>
+  <p class="note" data-rv style="--d:80ms">There's no separate Stanley CLI; Claude Code is the terminal. Clone, approve the server the repo registers, sign in once, and ask where to start.</p>
+  <div class="term" data-rv style="--d:140ms" role="img" aria-label="A terminal transcript: cloning the repo, approving the Stanley MCP server, signing in, and running the stanley-start audit.">
+    <span class="term-bar">~/stanley-mcp-playground</span>
+    <pre><span class="tc-cmd">$ git clone ${REPO_URL}.git</span>
+<span class="tc-cmd">$ cd stanley-mcp-playground &amp;&amp; claude</span>
+
+<span class="tc-dim">  Found 1 MCP server in .mcp.json · stanley → approved</span>
+
+<span class="tc-you">&gt; /mcp</span>
+<span class="tc-dim">  stanley · getstanley.ai opens in your browser · signed in</span>
+
+<span class="tc-you">&gt; where do I start</span>
+<span class="tc-tool">  ● /stanley-start · asking Stanley what's connected</span>
+
+<span class="tc-name">  stanley</span>  connected: x · linkedin · github · notion
+           instagram: session expired · slots: 8:00 am and 12:00 pm
+
+<span class="tc-name">  claude</span>   Your setup runs recipes 02, 03 and 06 today. Start with
+           recipe 01: one draft, scheduled into your 8:00 am slot.</pre>
+  </div>
+</section>
+
 <section class="recipes shell" id="recipes">
   <span class="kicker">The cookbook</span>
   <h2 class="section" data-rv>Nine recipes, in learning order</h2>

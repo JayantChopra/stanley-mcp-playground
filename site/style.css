@@ -189,6 +189,28 @@ p.note { color: var(--navy); max-width: 58ch; margin-top: 16px; font-size: 1.02r
 .rail { position: absolute; left: 0; right: 0; top: 50%; height: 2px; width: 100%; z-index: 0; overflow: visible; }
 .rail path { fill: none; stroke: var(--grey-2); stroke-width: 2; vector-effect: non-scaling-stroke; }
 
+/* ---------- setup terminal ---------- */
+
+.setup { padding-top: var(--band); }
+.term {
+  background: var(--navy); border-radius: 16px; padding: 26px 30px;
+  margin-top: 44px; max-width: 860px;
+}
+.term-bar {
+  display: block; margin-bottom: 16px;
+  font-size: 10px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--purple-light);
+}
+.term pre {
+  margin: 0; font-family: var(--mono); font-size: 0.84rem; line-height: 1.8;
+  color: #aab0cc; white-space: pre-wrap; word-break: break-word;
+}
+.tc-cmd { color: var(--white); }
+.tc-dim { color: var(--grey-3); }
+.tc-you { color: var(--purple-light); font-weight: 500; }
+.tc-tool { color: var(--purple-light); }
+.tc-name { color: var(--white); font-weight: 500; }
+
 /* ---------- recipes grid ---------- */
 
 .recipes { padding-top: var(--band); padding-bottom: var(--band); }
