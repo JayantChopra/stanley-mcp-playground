@@ -141,14 +141,13 @@ ${TOPBAR("")}
 <main>
 <section class="hero shell">
   <div>
-    <span class="kicker" data-rv>The Stanley MCP cookbook</span>
-    <h1 data-rv style="--d:60ms">Recipes for driving <em>Stanley</em> from Claude.</h1>
-    <p class="lede" data-rv style="--d:140ms">Stanley already knows your voice, your calendar, and your platforms. These nine recipes put him to work, from your first scheduled post to a content operation that mostly runs itself.</p>
-    <div class="cta-row" data-rv style="--d:220ms">
+    <h1 data-rv>Recipes for driving <em>Stanley</em> from Claude.</h1>
+    <p class="lede" data-rv style="--d:80ms">Stanley already knows your voice, your calendar, and your platforms. These nine recipes put him to work, from your first scheduled post to a content operation that mostly runs itself.</p>
+    <div class="cta-row" data-rv style="--d:160ms">
       <a class="btn btn-primary" href="recipes/01-first-connection.html">Start with recipe 01</a>
       <a class="btn btn-ghost" href="#recipes">Browse all nine</a>
     </div>
-    <div class="clone" data-rv style="--d:300ms" data-cmd="${CLONE_CMD}"><code>${CLONE_CMD}</code></div>
+    <div class="clone" data-rv style="--d:240ms" data-cmd="${CLONE_CMD}"><code>${CLONE_CMD}</code></div>
   </div>
   <div class="convo" data-rv style="--d:200ms">
     <span class="tag">The audit · every setup starts here</span>

@@ -82,10 +82,9 @@ a:hover { color: var(--strike); }
   display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
   gap: 72px; align-items: center;
 }
-.hero .kicker { margin-bottom: 18px; }
 .hero h1 {
-  font-weight: 800; font-size: clamp(2.7rem, 6.6vw, 5.1rem);
-  line-height: 0.9; letter-spacing: -0.05em; margin-bottom: 26px;
+  font-weight: 800; font-size: clamp(2.6rem, 6.3vw, 4.9rem);
+  line-height: 1.04; letter-spacing: -0.04em; margin-bottom: 30px;
 }
 .hero h1 em { font-style: normal; color: var(--accent); }
 .hero .lede {
@@ -243,7 +242,7 @@ p.note { color: var(--navy); max-width: 58ch; margin-top: 16px; font-size: 1.02r
 
 footer { background: var(--black); color: var(--white); overflow-x: clip; }
 .foot {
-  padding-top: 56px; padding-bottom: 32px;
+  padding-top: 80px; padding-bottom: 56px;
   display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
   font-size: 0.9rem; color: var(--grey-3);
 }
@@ -251,15 +250,18 @@ footer { background: var(--black); color: var(--white); overflow-x: clip; }
 .foot a:hover { color: var(--purple-light); }
 .foot nav { display: flex; gap: 22px; flex-wrap: wrap; }
 .foot-mark {
-  padding: 0 16px 8px;
-  font-weight: 800; font-size: 8vw; letter-spacing: -0.075em;
-  line-height: 1; color: var(--white); white-space: nowrap;
+  padding: 0 16px;
+  font-weight: 800; font-size: 7.7vw; letter-spacing: -0.055em;
+  line-height: 1.1; color: var(--white); white-space: nowrap;
 }
 .foot-mark .dot { color: var(--accent); }
 
 /* the closing band: a real photograph, rendered as an ordered-dither
    halftone. One pixel per cell, scaled up crisp. */
-.woods { position: relative; height: clamp(180px, 28vh, 340px); background: var(--black); }
+.woods {
+  position: relative; margin-top: 56px;
+  height: clamp(180px, 28vh, 340px); background: var(--black);
+}
 .woods canvas {
   position: absolute; inset: 0; width: 100%; height: 100%;
   image-rendering: pixelated;
