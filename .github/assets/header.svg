@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 300" role="img" aria-label="stanley mcp playground, the Stanley MCP cookbook">
-  <rect width="1280" height="300" rx="14" fill="#23262d"/>
-  <text x="1170" y="235" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="150" font-weight="700" fill="none" stroke="#383d47" stroke-width="2">00→08</text>
-  <circle cx="96" cy="130" r="14" fill="#d9482b"/>
-  <text x="130" y="152" font-family="Helvetica Neue, Arial, sans-serif" font-size="58" font-weight="800" letter-spacing="-1" fill="#f7f5f0">stanley·mcp·playground</text>
-  <text x="132" y="200" font-family="Menlo, Consolas, monospace" font-size="21" fill="#9a9da5">the Stanley MCP cookbook · recipes 00→08 · skills included</text>
+  <rect width="1280" height="300" rx="14" fill="#000000"/>
+  <text x="1170" y="235" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="150" font-weight="700" fill="none" stroke="#3B2BAA" stroke-width="2">00→08</text>
+  <circle cx="96" cy="130" r="14" fill="#6355FF"/>
+  <text x="130" y="152" font-family="Helvetica Neue, Arial, sans-serif" font-size="58" font-weight="800" letter-spacing="-1" fill="#ffffff">stanley·mcp·playground</text>
+  <text x="132" y="200" font-family="Menlo, Consolas, monospace" font-size="21" fill="#808EB6">the Stanley MCP cookbook · recipes 00→08 · skills included</text>
 </svg>

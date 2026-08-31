@@ -11,8 +11,8 @@
 <p align="center">
   <a href="https://github.com/JayantChopra/stanley-mcp-playground/actions/workflows/lint.yml"><img src="https://github.com/JayantChopra/stanley-mcp-playground/actions/workflows/lint.yml/badge.svg" alt="lint" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache 2.0" /></a>
-  <a href="recipes/"><img src="https://img.shields.io/badge/recipes-9-d9482b.svg" alt="Recipes: 9" /></a>
-  <a href=".claude/skills/"><img src="https://img.shields.io/badge/skills-5-efc94c.svg" alt="Skills: 5" /></a>
+  <a href="recipes/"><img src="https://img.shields.io/badge/recipes-9-6355ff.svg" alt="Recipes: 9" /></a>
+  <a href=".claude/skills/"><img src="https://img.shields.io/badge/skills-5-9d96ff.svg" alt="Skills: 5" /></a>
   <a href="https://github.com/JayantChopra/stanley-mcp-playground/issues"><img src="https://img.shields.io/github/issues/JayantChopra/stanley-mcp-playground.svg" alt="Issues" /></a>
 </p>
 
