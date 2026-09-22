@@ -49,11 +49,10 @@ On claude.ai instead: add `https://xapi.getstanley.ai/mcp` as a custom connector
 ## How it works
 
 ```
- you ──▸ Claude ──▸ message_stanley ──▸ Stanley ──▸ X · LinkedIn · Threads · Instagram*
+ you ──▸ Claude ──▸ message_stanley ──▸ Stanley ──▸ X · LinkedIn · Threads · Instagram · Substack Notes
            │                              │
       your other tools               calendar · analytics · media · rituals
       (GitHub, Canva, Notion…)
-                                     * Instagram drafts wait for your hand, by design
 ```
 
 On Claude's side, Stanley is a single MCP tool with persistent conversation state, so recipes are conversation patterns rather than API call sequences. The full capability sheet, limits, and approval model live in [recipe 09](recipes/09-what-stanley-can-do.md).

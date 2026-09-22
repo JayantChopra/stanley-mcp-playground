@@ -40,5 +40,6 @@ Every other recipe in this cookbook is a bigger version of that loop.
 ## When it breaks
 
 - No `message_stanley` tool: the server wasn't approved or your sign-in lapsed. Re-run `/mcp`.
+- A message is rejected before Stanley sees it: `message_stanley` takes at most 8,000 characters per call. Split long notes or transcripts, or point Stanley at the connected source instead of pasting.
 - "Nothing connected": link a platform at getstanley.ai first. The cookbook can't do that part for you.
 - The draft sounds like anyone: your voice profile is thin. Paste 3 to 5 posts you wrote yourself and ask Stanley to update it.

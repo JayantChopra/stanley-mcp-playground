@@ -12,7 +12,7 @@ On Claude's side, Stanley is a single MCP tool called `message_stanley`. You or 
 
 **Drafting.** Platform-native drafts in your voice for X, LinkedIn, Threads, and Substack Notes, run through per-platform quality checks that keep generic AI tone out. He adapts content across formats and in any direction between platforms: thread to single post, X to LinkedIn and back, a post into a Threads chain, a thread into a carousel. Sources can be your posts on any connected platform or raw pasted text: notes, transcripts, whatever you have.
 
-**Publishing.** Hands-off native publishing on X, LinkedIn, Threads, and Substack Notes where connected. Instagram is the exception by design: Stanley drafts, schedules, builds carousels, and manages photo assets, but a human presses post.
+**Publishing.** Hands-off native publishing on X, LinkedIn, Threads, Substack Notes, and Instagram where connected. Instagram needs media: a draft schedules only with an image or video attached, and only when the connection carries Instagram's publish permission. Without it, Stanley still drafts, builds carousels, and manages photo assets, and a human presses post.
 
 **Media.** Hand Stanley any public HTTPS URL and he stages the file into storage, returning a media key you attach to drafts. He also generates diagram-style explainer images, renders multi-slide carousels from code, and screenshots X posts into quote cards.
 
@@ -34,6 +34,7 @@ On Claude's side, Stanley is a single MCP tool called `message_stanley`. You or 
 | X post | 280 weighted characters, or 25,000 with X Premium |
 | X media | 1 to 4 images, or 1 video or GIF |
 | Threads post | 500 characters; chains use `<thread-break/>` |
+| `message_stanley` message | 8,000 characters per call; paste longer material in parts or point Stanley at a connected source |
 
 ## What always needs your approval
 

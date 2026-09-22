@@ -40,7 +40,7 @@ Prefer to run this hands-off? The repo ships a `stanley-week-plan` skill that wa
 
 ## Where things land
 
-Nothing in this recipe goes live during the session. Fresh drafts sit unscheduled in Stanley's calendar until step 4. Once scheduled, each post sits in its slot and publishes on its own when the time arrives. Instagram drafts are the exception: they wait in the calendar for you to press post by hand. If you want something out the door right now, say so, and Stanley asks for your approval before publishing.
+Nothing in this recipe goes live during the session. Fresh drafts sit unscheduled in Stanley's calendar until step 4. Once scheduled, each post sits in its slot and publishes on its own when the time arrives. Instagram drafts publish on their own too, as long as the draft carries an image or video and your Instagram connection has publish permission; a text-only or permission-less Instagram draft waits in the calendar for you to post by hand. If you want something out the door right now, say so, and Stanley asks for your approval before publishing.
 
 ## When it breaks
 
