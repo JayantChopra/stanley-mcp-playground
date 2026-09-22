@@ -8,7 +8,7 @@ Rituals are recurring jobs that run on cron schedules in your local timezone. St
 
 ## The two kinds
 
-**Built-in rituals** come ready-made: a morning brief, a weekly analytics review, an evening recap, and a build-in-public scanner. Each one toggles active or inactive and takes a local wall-clock delivery time, no cron required. [Recipe 04](04-analytics-review.md) covers what the analytics review digs into, and [recipe 03](03-build-in-public.md) is the manual version of what the scanner automates.
+**Built-in rituals** come ready-made. The four this recipe walks through are a morning brief, a weekly analytics review, an evening recap, and a build-in-public scanner; the full catalog is longer (news scout, trend tie-in, repost boost, X to Threads and Substack, Kit newsletter to X, Substack publication to X, Granola meetings to content, and more), and "list every ritual I could turn on" shows what your connections unlock. Each one toggles active or inactive and takes a local wall-clock delivery time, no cron required. [Recipe 04](04-analytics-review.md) covers what the analytics review digs into, and [recipe 03](03-build-in-public.md) is the manual version of what the scanner automates.
 
 **Custom recurring tasks** take a cron expression in your local timezone, a fixed interval (every 4 hours), or a one-off delay (in 3 hours). Anything you'd ask Stanley to do by hand, you can put on a clock.
 

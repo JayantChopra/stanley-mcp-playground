@@ -49,7 +49,7 @@ One video per X post, and it takes the place of the image slots.
 
 ## Where things land
 
-Staging alone changes nothing visible; the file sits in Stanley's storage under its key until a draft claims it. An attached draft waits on the calendar (or in your drafts) with the media bound to it. A scheduled draft posts on its own when its slot arrives; publishing right now is the step that asks for your approval. Instagram assets go to the photo gallery for you to compose and post by hand.
+Staging alone changes nothing visible; the file sits in Stanley's storage under its key until a draft claims it. An attached draft waits on the calendar (or in your drafts) with the media bound to it. A scheduled draft posts on its own when its slot arrives; publishing right now is the step that asks for your approval. Instagram assets attach to a scheduled Instagram draft when your connection has publish permission; otherwise they go to the photo gallery for you to compose and post by hand.
 
 ## Fork and extend
 
